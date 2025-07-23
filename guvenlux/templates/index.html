@@ -50,68 +50,23 @@
                 <div class="collapse navbar-collapse" id="primaryNavbarCollapse">
                     <ul class="navbar-nav py-3 py-lg-0 mt-1 mb-2 my-lg-0 ms-lg-n1">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle dropdown-indicator" href="JavaScript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{% url 'index' %}">Slider Header</a></li>
-                                <li><a class="dropdown-item" href="{% static 'homes/header-slider-classic.html' %}">Slider Classic</a></li>
-                                <li><a class="dropdown-item" href="{% static 'homes/header-static.html' %}">Static Header</a></li>
-                                <li><a class="dropdown-item" href="{% static 'homes/header-static-classic.html' %}">Static Classic</a></li>
-                                <li><a class="dropdown-item" href="{% static 'homes/header-youtube-video.html' %}">Youtube Background</a></li>
-                                <li><a class="dropdown-item" href="{% static 'homes/header-youtube-video-classic.html' %}">Youtube Classic</a></li>
-                                <li><a class="dropdown-item" href="{% static 'homes/header-selfhosted-video.html' %}">Self-hosted Video</a></li>
-                                <li><a class="dropdown-item" href="{% static 'homes/header-selfhosted-video-classic.html' %}">Self-hosted Classic</a></li>
-                            </ul>
-                        </li>
+                            <a class="nav-link" href="{% url 'index' %}">Home</a>                        
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle dropdown-indicator" href="JavaScript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                            <a class="nav-link dropdown-toggle dropdown-indicator" href="JavaScript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{% static 'pages/about.html' %}">About</a></li>
-                                <li><a class="dropdown-item" href="{% static 'pages/recognition.html' %}">Recognition</a></li>
-                                <li><a class="dropdown-item" href="{% static 'pages/blank.html' %}">Blank Page</a></li>
-                                <li><a class="dropdown-item" href="{% static 'pages/404.html' %}">404 Page</a></li>
-                                <li class="dropend">
-                                    <a class="dropdown-item dropdown-toggle dropdown-indicator" href="JavaScript:void(0)" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="{% static 'pages/login.html' %}">Login</a></li>
-                                        <li><a class="dropdown-item" href="{% static 'pages/registration.html' %}">Registration</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle dropdown-indicator" href="JavaScript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Projects</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{% static 'projects/projects.html' %}">Projects Gallery</a></li>
-                                <li><a class="dropdown-item" href="{% static 'projects/project.html' %}">Single Project</a></li>
+                                <li><a class="dropdown-item" href="{% url 'products-list' %}">Products Gallery</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle dropdown-indicator" href="JavaScript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{% static 'blog/blog-list.html' %}">Blog List</a></li>
-                                <li><a class="dropdown-item" href="{% static 'blog/blog.html' %}">Single Blog</a></li>
+                                <li><a class="dropdown-item" href="{% url 'blog-list' %}">Blog List</a></li>
+
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle dropdown-indicator" href="JavaScript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contact</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{% static 'contact/contact1.html' %}">Contact 1</a></li>
-                                <li><a class="dropdown-item" href="{% static 'contact/contact2.html' %}">Contact 2</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle dropdown-indicator" href="JavaScript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Elements</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{% static 'elements/buttons.html' %}">Buttons</a></li>
-                                <li><a class="dropdown-item" href="{% static 'elements/colors.html' %}">Colors</a></li>
-                                <li><a class="dropdown-item" href="{% static 'elements/googlemap.html' %}">Google Map</a></li>
-                                <li><a class="dropdown-item" href="{% static 'elements/grid.html' %}">Grid</a></li>
-                                <li><a class="dropdown-item" href="{% static 'elements/icons.html' %}">Icons</a></li>
-                                <li><a class="dropdown-item" href="{% static 'elements/layouthelpers.html' %}">Layout Helpers</a></li>
-                                <li><a class="dropdown-item" href="{% static 'elements/modal-video.html' %}">Modal Video</a></li>
-                                <li><a class="dropdown-item" href="{% static 'elements/swiper.html' %}">Swiper</a></li>
-                                <li><a class="dropdown-item" href="{% static 'elements/typography.html' %}">Typography</a></li>
-                            </ul>
+                            <a class="nav-link" href="{% url 'about-page' %}">About</a>
+
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-lg-auto flex-row justify-content-center py-3 py-lg-0 me-n2">
