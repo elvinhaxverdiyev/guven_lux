@@ -1,10 +1,12 @@
 from django.urls import path
 from . import views
+from .views import *
+
 
 urlpatterns = [
-    path(
-        '',
-        views.index,
+   path(
+        '', 
+        HomePageView.as_view(), 
         name='index'
     ),
     path('products/', views.products_list, name='products-list'),
