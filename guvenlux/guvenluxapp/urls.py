@@ -9,7 +9,22 @@ urlpatterns = [
         HomePageView.as_view(), 
         name='index'
     ),
-    path('products/', views.products_list, name='products-list'),
-    path('blogs/', views.blog_list, name='blog-list'),
+   
+   path('category/<slug:slug>/', CategoryDetailView.as_view(), name='category-detail'),
+
+   
+   path(
+        'products/', 
+        ProductPageView.as_view(), 
+        name='product-list'
+    ),
+    path(
+        'product/<slug:product_slug>/', 
+        ProductDetailView.as_view(), 
+        name='product-detail'
+    ),
+    path('category/<slug:category_slug>/subcategories/', SubcategoryListView.as_view(), name='subcategories-by-category'),
+
+    path('contact/', views.contact, name='contact-page'),
     path('about/', views.about_page, name='about-page'),
 ]

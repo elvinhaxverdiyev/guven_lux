@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils.text import slugify
+
 from .category import Category
 
 
@@ -17,6 +19,8 @@ class Product(models.Model):
         max_length=500,
         verbose_name='Haqqında'
     )
+    slug = models.SlugField(max_length=150, unique=True, blank=True, null=True)
+
     price = models.FloatField(
         verbose_name='Qiymət'   
     )
@@ -37,6 +41,10 @@ class Product(models.Model):
         if first_image and first_image.image:
             return first_image.image.url
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
     def __str__(self):
         return self.name
     
