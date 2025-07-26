@@ -1,9 +1,10 @@
 {% load static %}
 
+
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
 
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,76 +21,77 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/img/favicons/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/img/favicons/favicon-16x16.png' %}">
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicons/favicon.ico' %}">
-    <!-- Kənar manifest.json silindi, lokal olaraq əlavə edə bilərsiniz -->
+    <link rel="manifest" href="https://prium.github.io/freya/v2.1.0/assets/img/favicons/manifest.json' %}">
     <meta name="msapplication-TileImage" content="{% static 'assets/img/favicons/mstile-150x150.png' %}">
     <meta name="theme-color" content="#ffffff">
 
-    <!-- ===============================================-->
-    <!--    Stylesheets-->
-    <!-- ===============================================-->
+
     <link href="{% static 'vendors/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
     <link href="{% static 'vendors/hamburgers/hamburgers.min.css' %}" rel="stylesheet">
     <link href="{% static 'vendors/loaders.css/loaders.min.css' %}" rel="stylesheet">
-    <link href="{% static 'assets/css/theme.min.css' %}" rel="stylesheet">
-    <link href="{% static 'assets/css/user.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/theme.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/user.min.css' %}" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-</head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&amp;family=Jost:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  </head>
 
-<body>
+  <body>
     <div class="fixed-top">
-        <div class="container px-0">
-            <nav class="navbar navbar-expand-lg navbar-freya navbar-light">
-                <a class="navbar-brand" href="{% url 'index' %}">
-                    <div class="freya-logo">Freya</div>
-                </a>
-                <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNavbarCollapse" aria-controls="primaryNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="hamburger hamburger--emphatic"><span class="hamburger-box"><span class="hamburger-inner"></span></span></span>
-                </button>
-                <div class="collapse navbar-collapse" id="primaryNavbarCollapse">
-                    <ul class="navbar-nav py-3 py-lg-0 mt-1 mb-2 my-lg-0 ms-lg-n1">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="{% url 'index' %}">Home</a>                        
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle dropdown-indicator" href="JavaScript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{% url 'products-list' %}">Products Gallery</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle dropdown-indicator" href="JavaScript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{% url 'blog-list' %}">Blog List</a></li>
+      <div class="container px-0">
+        <nav class="navbar navbar-expand-lg navbar-freya navbar-light"> 
+            <a class="navbar-brand" href="{% url 'index' %}">
 
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="{% url 'about-page' %}">About</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav ms-lg-auto flex-row justify-content-center py-3 py-lg-0 me-n2">
-                        <li><a class="nav-link px-2" href="#"><span class="fab fa-facebook-f" data-fa-transform="shrink-2"></span></a></li>
-                        <li><a class="nav-link px-2" href="#"><span class="fab fa-twitter" data-fa-transform="shrink-2"></span></a></li>
-                        <li><a class="nav-link px-2" href="#"><span class="fab fa-instagram" data-fa-transform="shrink-2"></span></a></li>
-                        <li><a class="nav-link px-2" href="#"><span class="fab fa-dribbble" data-fa-transform="shrink-2"></span></a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+            <div class="freya-logo">logo yeri</div>
+          </a><button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNavbarCollapse" aria-controls="primaryNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="hamburger hamburger--emphatic"><span class="hamburger-box"><span class="hamburger-inner"></span></span></span></button>
+          <div class="collapse navbar-collapse" id="primaryNavbarCollapse">
+            <ul class="navbar-nav py-3 py-lg-0 mt-1 mb-2 my-lg-0 ms-lg-n1">
+              <li class="nav-item dropdown"><a class="nav-link  " href="{% url 'index' %}" role="button"  aria-expanded="false">Home</a>
+              </li>
+              <a class="nav-link" href="{% url 'about-page' %}">Haqqimizda</a>
+
+              </li>
+              <a class="nav-link" href="{% url 'contact-page' %}">Elaqe</a>
+              </li>
+            <!-- MENYUDA DUZƏLİŞ -->
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle dropdown-indicator" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kataloq</a>
+            <ul class="dropdown-menu">
+                {% for cat in main_categories %}
+                <li>
+                    <!-- Burada artıq subcategory.html-ə yönləndiririk -->
+                    <a class="dropdown-item" href="{% url 'subcategories-by-category' category_slug=cat.slug %}">
+                    {{ cat.name }}
+                    </a>
+                </li>
+                {% empty %}
+                <li><span class="dropdown-item text-muted">Heç bir kateqoriya yoxdur</span></li>
+                {% endfor %}
+            </ul>
+            </li>
+
+
+
+
+            </ul>
+            <ul class="navbar-nav ms-lg-auto flex-row justify-content-center py-3 py-lg-0 me-n2">
+              <li><a class="nav-link px-2" href="index.html#"><span class="fab fa-facebook-f" data-fa-transform="shrink-2"></span></a></li>
+              <li><a class="nav-link px-2" href="index.html#"><span class="fab fa-whatsapp" data-fa-transform="shrink-2"></span></a></li>
+              <li><a class="nav-link px-2" href="index.html#"><span class="fab fa-instagram" data-fa-transform="shrink-2"></span></a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </div>
-
-    <!-- ===============================================-->
-    <!--    Main Content-->
-    <!-- ===============================================-->
+ 
     <main class="main" id="top">
-        <div class="preloader" id="preloader">
-            <div class="loader-box">
-                <div class="loader"></div>
-            </div>
+      <div class="preloader" id="preloader">
+        <div class="loader-box">
+          <div class="loader"></div>
         </div>
-        <section class="py-0">
-  <div class="swiper theme-slider min-vh-100" data-swiper='{"loop":true,"allowTouchMove":false,"autoplay":{"delay":5000},"effect":"fade","speed":800}'>
+      </div>
+    <section class="py-0">
+<div class="swiper theme-slider min-vh-100" data-swiper='{"loop":true,"allowTouchMove":false,"autoplay":{"delay":5000},"effect":"fade","speed":800}'>
     <div class="swiper-wrapper">
       {% for image in background_images %}
       <div class="swiper-slide" data-zanim-timeline="{}">
@@ -107,13 +109,12 @@
                     <p class="mb-1 text-uppercase ls" data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.1}'>{{ image.title|default:"Başlıq" }}</p>
                   </div>
                   <div class="overflow-hidden">
-                    <h2 class="text-white fw-normal mb-4 mb-lg-0" data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0}'>{{ image.subtitle|default:"Alt başlıq" }}</h2>
+                    <h2 class="text-white fw-normal mb-4 mb-lg-0" data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0}'>{{ image.description|default:"Alt başlıq" }}</h2>
                   </div>
                 </div>
                 <div class="col text-lg-end">
                   <div class="overflow-hidden">
                     <div data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.2}'>
-                      <a class="btn btn-sm btn-outline-white" href="#!">{{ image.button_text|default:"View Case Study" }}</a>
                     </div>
                   </div>
                 </div>
@@ -125,223 +126,78 @@
       {% endfor %}
     </div>
 
-    <div class="swiper-nav">
-      <div class="swiper-button-prev"><span class="fas fa-chevron-left"></span></div>
-      <div class="swiper-button-next"><span class="fas fa-chevron-right"></span></div>
+        
+ <section class="bg-white text-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <h3 class="mb-4">Popular məhsullar</h3>
+      </div>
+    </div>
+    <div class="row mt-6 mt-lg-0">
+      {% for product in popular_products %}
+      <div class="col-lg-4 d-flex mb-4">
+        <div class="card w-100 shadow-sm border-0 d-flex flex-column">
+          <img 
+            class="img-fluid mx-auto mt-3"
+            src="{{ product.get_main_image_url }}" 
+            alt="{{ product.name }}" 
+            style="width: 300px; height: 300px; object-fit: cover; border-radius: 8px;"
+          />
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="ls text-uppercase mt-3 mb-2" style="font-size: 16px;">{{ product.name }}</h5>
+              <span class="ls text-uppercase mb-2 d-inline-block bg-light px-2 py-1 rounded" style="font-size: 14px;">{{ product.price }} AZN</span>
+              <p class="text-justify" style="font-size: 14px; line-height: 1.6; min-height: 85px;">
+                {{ product.description|truncatewords:25 }}
+              </p>
+            </div>
+            <div class="mt-auto">
+              <a href="{% url 'product-detail' product.slug %}" class="text-dark text-decoration-none bg-warning px-3 py-2 rounded-pill border d-inline-block" style="font-size: 14px;">Ətraflı</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
 
 
-        <!-- ============================================-->
-        <!-- <section> begin ============================-->
-        <section class="bg-white text-center">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-10">
-                        <h3 class="mb-4">Freya Inc. is the hub for top architects and inventors, ready to turn your imagination into reality</h3>
-                        <p>All photographs provided for demo purposes only.</p>
-                    </div>
-                </div>
-                <div class="row mt-6">
-                    <div class="col-lg-4">
-                        <div class="row align-items-center">
-                            <div class="col-md-6 col-lg-12"><img class="img-fluid" src="{% static 'assets/img/img_1.jpg' %}" alt="Residential" /></div>
-                            <div class="col-md-6 col-lg-12 text-md-start text-lg-center">
-                                <h5 class="ls text-uppercase mt-4 mb-3">Residential</h5>
-                                <p class="text-justify">From Manitoba to Brooklyn, affordable, comfortable and livable houses for families of all shapes and sizes are covered by us. Cras justo odio, dapibus, egestas eget quam lorem ipsum.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-4 mt-lg-0">
-                        <div class="row align-items-center">
-                            <div class="col-md-6 col-lg-12"><img class="img-fluid" src="{% static 'assets/img/img_2.jpg' %}" alt="Commercial" /></div>
-                            <div class="col-md-6 col-lg-12 text-md-start text-lg-center">
-                                <h5 class="ls text-uppercase mt-4 mb-3">Commercial</h5>
-                                <p class="text-justify">We have also designing interiors for restaurants, bar or office spaces. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dolor.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-4 mt-lg-0">
-                        <div class="row align-items-center">
-                            <div class="col-md-6 col-lg-12"><img class="img-fluid" src="{% static 'assets/img/img_3.jpg' %}" alt="Hospitality" /></div>
-                            <div class="col-md-6 col-lg-12 text-md-start text-lg-center">
-                                <h5 class="ls text-uppercase mt-4 mb-3">Hospitality</h5>
-                                <p class="text-justify">You need your guests to have an unforgettable experience, Freya Inc. is ready to deliver. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Fusce dapibus.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- end of .container-->
-        </section><!-- <section> close ============================-->
-        <!-- ============================================-->
+<footer class="bg-secondary text-white pt-5 pb-4 mt-5">
+  <div class="container text-center text-md-start">
+    <div class="row">
 
-        <!-- ============================================-->
-        <!-- <section> begin ============================-->
-        <section class="py-10 overflow-hidden text-center" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-            <div class="bg-holder overlay overlay-1" style="background-image:url({% static 'assets/img/banner_1.jpg' %});" data-parallax="data-parallax" data-rellax-percentage="0.5"></div>
-            <!--/.bg-holder-->
-            <div class="container">
-                <div class="overflow-hidden">
-                    <h1 class="fs-5 fs-sm-6 text-white mb-3" data-zanim-xs='{"delay":0}'>Museo</h1>
-                </div>
-                <div class="overflow-hidden">
-                    <h4 class="ls fw-light text-uppercase text-300 mb-0" data-zanim-xs='{"delay":0.1}'>Manitoba</h4>
-                </div>
-            </div><!-- end of .container-->
-        </section><!-- <section> close ============================-->
-        <!-- ============================================-->
+      <div class="col-md-4 mb-4">
+        <h5 class="text-uppercase mb-3">Menyu</h5>
+        <ul class="list-unstyled">
+          <li><a href="{% url 'index' %}" class="text-white text-decoration-none d-block mb-2">Ana sehife</a></li>
+          <li><a href="{% url 'about-page' %}" class="text-white text-decoration-none d-block mb-2">Haqqımızda</a></li>
+          <li><a href="{% url 'contact-page' %}" class="text-white text-decoration-none d-block mb-2">Əlaqə</a></li>
+        </ul>
+      </div>
 
-        <!-- ============================================-->
-        <!-- <section> begin ============================-->
-        <section class="text-center">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-10 col-lg-8">
-                        <h3 class="mb-4">A coffee shop gains a warmer look</h3>
-                        <p class="mb-7">Museo coffees got in touch with Freya for their renovation. We took over and asked them to have a cup of coffee for themselves while the job is done! Sed posuere consectetur est at lobortis. Fusce dapibs, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Duis mollis, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Pellentsque ornare se lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 mb-4"><img class="w-100" src="{% static 'assets/img/img_4.jpg' %}" alt="gallery image"></div>
-                    <div class="col-lg-6 mb-4"><img class="w-100" src="{% static 'assets/img/img_5.jpg' %}" alt="gallery image"></div>
-                    <div class="col-12 mb-4"><img class="w-100" src="{% static 'assets/img/img_6.jpg' %}" alt="gallery image"></div>
-                </div>
-            </div><!-- end of .container-->
-        </section><!-- <section> close ============================-->
-        <!-- ============================================-->
+      <div class="col-md-4 mb-4 text-center">
+        <h5 class="text-uppercase mb-3">Bizə qoşul</h5>
+        <a href="#" class="text-white me-3"><span class="fab fa-facebook-f"></span></a>
+        <a href="#" class="text-white me-3"><span class="fab fa-whatsapp"></span></a>
+        <a href="#" class="text-white"><span class="fab fa-instagram"></span></a>
+      </div>
 
-        <!-- ============================================-->
-        <!-- <section> begin ============================-->
-        <section class="py-10 overflow-hidden text-center" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-            <div class="bg-holder overlay overlay-1" style="background-image:url({% static 'assets/img/banner_2.jpg' %});" data-parallax="data-parallax" data-rellax-percentage="0.5"></div>
-            <!--/.bg-holder-->
-            <div class="container">
-                <div class="overflow-hidden">
-                    <h1 class="fs-5 fs-sm-6 text-white mb-3" data-zanim-xs='{"delay":0}'>A Touch of Green</h1>
-                </div>
-                <div class="overflow-hidden">
-                    <h4 class="ls fw-light text-uppercase text-300 mb-0" data-zanim-xs='{"delay":0.1}'>in Brooklyn</h4>
-                </div>
-            </div><!-- end of .container-->
-        </section><!-- <section> close ============================-->
-        <!-- ============================================-->
+      <div class="col-md-4 mb-4">
+        <h5 class="text-uppercase mb-3">Əlaqə</h5>
+        <p class="mb-1 small">Freya Incorporated</p>
+        <p class="mb-1 small">019 Appellation Ave, New Jersey</p>
+        <p class="mb-1 small">535-118-7056</p>
+        <p class="mb-0 small">Template by <a class="text-white-75" href="https://themewagon.com" target="_blank">Themewagon</a></p>
+      </div>
 
-        <!-- ============================================-->
-        <!-- <section> begin ============================-->
-        <section class="text-center">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-10 col-lg-8">
-                        <h3 class="mb-4">A Brooklyn space becomes greener than ever.</h3>
-                        <p class="mb-7">With Freya's magical touch, a office space at Brooklyn becomes greener than ever. Cras matti consectetur purus st amet fermentum. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, consectetur ac, vestibulum at eros. Aenean eu leo quam. Pellentesque ornare sem lacinia qua venenatis vestibulum. Aenean lacinia bibendum nulla sed consectetur. Maecenas sed diam eget risus varius blandit sit amet non magna. Duis mollis, est non commodo luctus, nisi erat porttitor ligula neget.</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 mb-4"><img class="w-100" src="{% static 'assets/img/img_7.jpg' %}" alt="gallery image"></div>
-                    <div class="col-lg-6 mb-4"><img class="w-100" src="{% static 'assets/img/img_8.jpg' %}" alt="gallery image"></div>
-                    <div class="col-lg-6 mb-4"><img class="w-100" src="{% static 'assets/img/img_9.jpg' %}" alt="gallery image"></div>
-                </div>
-            </div><!-- end of .container-->
-        </section><!-- <section> close ============================-->
-        <!-- ============================================-->
+    </div>
+  </div>
+</footer>
 
-        <!-- ============================================-->
-        <!-- <section> begin ============================-->
-        <section class="py-10 overflow-hidden text-center" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-            <div class="bg-holder overlay overlay-1" style="background-image:url({% static 'assets/img/banner_3.jpg' %});" data-parallax="data-parallax" data-rellax-percentage="0.5"></div>
-            <!--/.bg-holder-->
-            <div class="container">
-                <div class="overflow-hidden">
-                    <h1 class="fs-5 fs-sm-6 text-white mb-3" data-zanim-xs='{"delay":0}'>Prestana Remereo</h1>
-                </div>
-                <div class="overflow-hidden">
-                    <h4 class="ls fw-light text-uppercase text-300 mb-0" data-zanim-xs='{"delay":0.1}'>Rio De Janeiro</h4>
-                </div>
-            </div><!-- end of .container-->
-        </section><!-- <section> close ============================-->
-        <!-- ============================================-->
 
-        <!-- ============================================-->
-        <!-- <section> begin ============================-->
-        <section class="text-center">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-10 col-lg-8">
-                        <h3 class="mb-4">Prestana Remereo deserved a coat of paint</h3>
-                        <p class="mb-7">Prestana Remereo wanted renovation, we simply delivered. Nullam quis risus eget urna mollis ornare vel leo. Donec sed odio dui. Nullam quis risus eget ua mollis ornare vel eu leo. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 mb-4"><img class="w-100" src="{% static 'assets/img/img_10.jpg' %}" alt="gallery image"></div>
-                    <div class="col-lg-6 mb-4"><img class="w-100" src="{% static 'assets/img/img_11.jpg' %}" alt="gallery image"></div>
-                    <div class="col-lg-6 mb-4"><img class="w-100" src="{% static 'assets/img/img_13.jpg' %}" alt="gallery image"></div>
-                    <div class="col-lg-6 mb-4"><img class="w-100" src="{% static 'assets/img/img_12.jpg' %}" alt="gallery image"></div>
-                </div>
-            </div><!-- end of .container-->
-        </section><!-- <section> close ============================-->
-        <!-- ============================================-->
 
-        <!-- ============================================-->
-        <!-- <section> begin ============================-->
-        <section class="py-10 overflow-hidden text-center" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-            <div class="bg-holder overlay overlay-1" style="background-image:url({% static 'assets/img/banner_4.jpg' %});" data-parallax="data-parallax" data-rellax-percentage="0.5"></div>
-            <!--/.bg-holder-->
-            <div class="container">
-                <div class="overflow-hidden">
-                    <h1 class="fs-5 fs-sm-6 text-white mb-3" data-zanim-xs='{"delay":0}'>Exquisite</h1>
-                </div>
-                <div class="overflow-hidden">
-                    <h4 class="ls fw-light text-uppercase text-300 mb-0" data-zanim-xs='{"delay":0.1}'>Hawaii</h4>
-                </div>
-            </div><!-- end of .container-->
-        </section><!-- <section> close ============================-->
-        <!-- ============================================-->
-
-        <!-- ============================================-->
-        <!-- <section> begin ============================-->
-        <section class="text-center">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-10 col-lg-8">
-                        <h3 class="mb-4">Luxurious lifestyle in the Mansion</h3>
-                        <p class="mb-7">No matter the task, Freya Inc. is up for it. Cum sociis natoque penatibus et magnis dis parturient bee, nascetur ridiculus mus. Nulla vitae elit libero, pharetra. Integer posuere erat ante venenatis posuere velit aliquet. Etiam wagner moura porta malesuada magna mollis euismod mondar alu aflak.</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 mb-4"><img class="w-100" src="{% static 'assets/img/img_14.jpg' %}" alt="gallery image"></div>
-                    <div class="col-lg-6 mb-4"><img class="w-100" src="{% static 'assets/img/img_16.jpg' %}" alt="gallery image"></div>
-                    <div class="col-lg-6 mb-4"><img class="w-100" src="{% static 'assets/img/img_17.jpg' %}" alt="gallery image"></div>
-                    <div class="col-12"><img class="w-100" src="{% static 'assets/img/img_15.jpg' %}" alt="gallery image"></div>
-                </div>
-            </div><!-- end of .container-->
-        </section><!-- <section> close ============================-->
-        <!-- ============================================-->
-    </main><!-- ===============================================-->
-    <!--    End of Main Content-->
-    <!-- =============================================-->
-
-    <!--===============================================-->
-    <!--    Footer-->
-    <!--===============================================-->
-
-    <!-- ============================================-->
-    <!-- <section> begin ============================-->
-    <section class="bg-300 py-4 fs-1 text-center">
-        <div class="container">
-            <a class="d-inline-block px-2 text-900 fs-1" href="#"><span class="fab fa-facebook-f" data-fa-transform="shrink-2"></span></a>
-            <a class="d-inline-block px-2 text-900 fs-1" href="#"><span class="fab fa-twitter" data-fa-transform="shrink-2"></span></a>
-            <a class="d-inline-block px-2 text-900 fs-1" href="#"><span class="fab fa-instagram" data-fa-transform="shrink-2"></span></a>
-        </div><!-- end of .container-->
-    </section><!-- <section> close ============================-->
-    <!-- ============================================-->
-
-    <footer class="bg-primary text-center py-6">
-        <div class="container">
-            <p class="text-uppercase text-300 ls mb-3">Freya Incorporated, 019 Appellation Ave, New Jersey, 535-118-7056</p>
-            <p class="text-700 mb-0">Template by <a class="text-600" href="https://themewagon.com" target="_blank">Themewagon</a></p>
-        </div>
-    </footer>
 
     <!-- ===============================================-->
     <!--    JavaScripts-->
@@ -349,7 +205,7 @@
     <script src="{% static 'vendors/popper/popper.min.js' %}"></script>
     <script src="{% static 'vendors/bootstrap/bootstrap.min.js' %}"></script>
     <script src="{% static 'vendors/is/is.min.js' %}"></script>
-    <script src="{% static 'vendors/bigpicture/BigPicture.js' %}"></script>
+    <script src="{% static 'vendors/bigpicture/BigPicture.js' %}"> </script>
     <script src="{% static 'vendors/swiper/swiper-bundle.min.js' %}"></script>
     <script src="{% static 'vendors/fontawesome/all.min.js' %}"></script>
     <script src="{% static 'vendors/rellax/rellax.min.js' %}"></script>
@@ -358,6 +214,6 @@
     <script src="{% static 'vendors/gsap/gsap.js' %}"></script>
     <script src="{% static 'vendors/gsap/customEase.js' %}"></script>
     <script src="{% static 'assets/js/theme.js' %}"></script>
-</body>
+  </body>
 
 </html>

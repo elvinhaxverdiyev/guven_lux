@@ -9,25 +9,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- ===============================================-->
-    <!--    Document Title-->
-    <!-- ===============================================-->
+
     <title>Freya | Website, template crafting machine</title>
 
-    <!-- ===============================================-->
-    <!--    Favicons-->
-    <!-- ===============================================-->
+
     <link rel="apple-touch-icon" sizes="180x180" href="{% static '/assets/img/favicons/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static '/assets/img/favicons/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static '/assets/img/favicons/favicon-16x16.png' %}">
     <link rel="shortcut icon" type="image/x-icon" href="{% static '/assets/img/favicons/favicon.ico' %}">
-    <link rel="manifest" href="https://prium.github.io/freya/v2.1.0/assets/img/favicons/manifest.json">
+    <link rel="manifest" href="https://prium.github.io/freya/v2.1.0/assets/img/favicons/manifest.json' %}">
     <meta name="msapplication-TileImage" content="{% static '/assets/img/favicons/mstile-150x150.png' %}">
     <meta name="theme-color" content="#ffffff">
 
-    <!-- ===============================================-->
-    <!--    Stylesheets-->
-    <!-- ===============================================-->
     <link href="{% static '/vendors/prism/prism.css' %}" rel="stylesheet">
     <link href="{% static '/vendors/hamburgers/hamburgers.min.css' %}" rel="stylesheet">
     <link href="{% static '/vendors/loaders.css/loaders.min.css' %}" rel="stylesheet">
@@ -51,7 +44,7 @@
               <a class="nav-link" href="{% url 'about-page' %}">Haqqimizda</a>
 
               </li>
-              <a class="nav-link" href="{% url 'contact-page' %}">Elaqe</a>
+             <a class="nav-link" href="{% url 'contact-page' %}">Elaqe</a>
               </li>
               <li class="nav-item dropdown"><a class="nav-link dropdown-toggle dropdown-indicator" href="JavaScript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">kataloq</a>
                 <ul class="dropdown-menu">
@@ -71,24 +64,17 @@
       </div>
     </div>
 
-    <!-- ============================================-->
-    <!-- <section> begin ============================-->
     <section class="py-9 overflow-hidden text-center" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-      <div class="bg-holder overlay overlay-1" style="background-image:url(../assets/img/about_header.jpg);" data-parallax="data-parallax"></div>
+      <div class="bg-holder overlay overlay-1" style="background-image:url(../assets/img/elements_header.jpg);" data-parallax="data-parallax"></div>
       <!--/.bg-holder-->
       <div class="container">
         <div class="overflow-hidden">
-          <h1 class="fs-5 fs-sm-6 text-white mb-3" data-zanim-xs='{"delay":0}'>devis yeri</h1>
+          <h1 class="fs-5 fs-sm-6 text-white mb-3" data-zanim-xs='{"delay":0}'>Devisons</h1>
         </div>
 
-      </div><!-- end of .container-->
-    </section><!-- <section> close ============================-->
-    <!-- ============================================-->
+      </div>
+    </section>
 
-
-    <!-- ===============================================-->
-    <!--    Main Content-->
-    <!-- ===============================================-->
     <main class="main" id="top">
       <div class="preloader" id="preloader">
         <div class="loader-box">
@@ -96,101 +82,28 @@
         </div>
       </div>
 
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="text-center">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-10">
-              <h3 class="mb-4">burda sirket haqqinda her hansi bir text </h3>
+      <section>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+
+          <div class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+
+            {% for subcat in subcategories %}
+            <div class="col">
+              <a href="{% url 'category-detail' subcat.slug %}">
+                <div class="border rounded p-3 mb-4 text-center">{{ subcat.name }}</div>
+              </a>
             </div>
+            {% empty %}
+            <p class="text-center">Alt kateqoriya yoxdur.</p>
+            {% endfor %}
 
-          </div>
-        </div><!-- end of .container-->
-      </section><!-- <section> close ============================-->
-      <!-- ============================================-->
-
-
-
-
-      <section class="text-center pb-8">
-        <div class="container">
-          <h2>Emekdawlar olacaq</h2>
-          <div class="row justify-content-center mt-6">
-            <div class="col-lg-11">
-              <div class="row">
-                <div class="col-lg-4 mb-5 mb-lg-0"><img class="img-fluid" src="../assets/img/portrait-1.jpg" alt="Shane Cotter" />
-                  <h5 class="text-black mt-4 mb-1">sirketin adi olacaq</h5>
-                </div>
-                <div class="col-lg-4 mb-5 mb-lg-0"><img class="img-fluid" src="../assets/img/portrait-2.jpg" alt="Kathryn Wilson" />
-                  <h5 class="text-black mt-4 mb-1">sirket adi</h5>
-                </div>
-                <div class="col-lg-4"><img class="img-fluid" src="../assets/img/portrait-3.jpg" alt="Thomas Anders" />
-                  <h5 class="text-black mt-4 mb-1">sirket adi</h5>
-                </div>
-                <div class="col-lg-4 mb-5 mb-lg-0"><img class="img-fluid" src="../assets/img/portrait-1.jpg" alt="Shane Cotter" />
-                  <h5 class="text-black mt-4 mb-1">sirketin adi olacaq</h5>
-                </div>
-                <div class="col-lg-4 mb-5 mb-lg-0"><img class="img-fluid" src="../assets/img/portrait-2.jpg" alt="Kathryn Wilson" />
-                  <h5 class="text-black mt-4 mb-1">sirket adi</h5>
-                </div>
-                <div class="col-lg-4"><img class="img-fluid" src="../assets/img/portrait-3.jpg" alt="Thomas Anders" />
-                  <h5 class="text-black mt-4 mb-1">sirket adi</h5>
-                </div>
-                <div class="col-lg-4 mb-5 mb-lg-0"><img class="img-fluid" src="../assets/img/portrait-1.jpg" alt="Shane Cotter" />
-                  <h5 class="text-black mt-4 mb-1">sirketin adi olacaq</h5>
-                </div>
-                <div class="col-lg-4 mb-5 mb-lg-0"><img class="img-fluid" src="../assets/img/portrait-2.jpg" alt="Kathryn Wilson" />
-                  <h5 class="text-black mt-4 mb-1">sirket adi</h5>
-                </div>
-                <div class="col-lg-4"><img class="img-fluid" src="../assets/img/portrait-3.jpg" alt="Thomas Anders" />
-                  <h5 class="text-black mt-4 mb-1">sirket adi</h5>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
-      </section>
-
-
-      <section class="pt-0">
-        <div class="container">
-          <h2 class="text-center">staff</h2>
-          <div class="row justify-content-center">
-            <div class="col-lg-11 mt-4">
-              <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                  <h5 class="text-black mt-4 mb-1">Eli ceo(guya)</h5>
-                  <p class="mb-0">elinin nomresi</p>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <h5 class="text-black mt-4 mb-1">Eli ceo(guya)</h5>
-                  <p class="mb-0">elinin nomresi</p>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <h5 class="text-black mt-4 mb-1">Eli ceo(guya)</h5>
-                  <p class="mb-0">elinin nomresi</p>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <h5 class="text-black mt-4 mb-1">Eli ceo(guya)</h5>
-                  <p class="mb-0">elinin nomresi</p>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <h5 class="text-black mt-4 mb-1">Eli ceo(guya)</h5>
-                  <p class="mb-0">elinin nomresi</p>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <h5 class="text-black mt-4 mb-1">Eli ceo(guya)</h5>
-                  <p class="mb-0">elinin nomresi</p>
-                </div>
-
- 
-              </div>
-            </div>
-          </div>
-        </div><!-- end of .container-->
-      </section><!-- <section> close ============================-->
-      <!-- ============================================-->
+      </div>
+    </div><!-- end of .container-->
+</section><!-- <section> close ============================-->
 
 
 <footer class="bg-secondary text-white pt-5 pb-4 mt-5">
@@ -224,6 +137,10 @@
     </div>
   </div>
 </footer>
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
     <script src="{% static '/vendors/popper/popper.min.js' %}"></script>
     <script src="{% static '/vendors/bootstrap/bootstrap.min.js' %}"></script>
     <script src="{% static '/vendors/is/is.min.js' %}"></script>

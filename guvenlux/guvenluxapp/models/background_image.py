@@ -2,6 +2,8 @@ from django.db import models
 
 
 class BackgroundImage(models.Model):
+    title = models.CharField(max_length=255, blank=True, null=True)
+    description = models.CharField(max_length=255, blank=True, null=True)
     image = models.ImageField(
         upload_to='background_images',
         verbose_name='Arxa plan şəkli'
