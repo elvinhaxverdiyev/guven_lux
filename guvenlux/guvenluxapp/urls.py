@@ -25,6 +25,8 @@ urlpatterns = [
     ),
     path('category/<slug:category_slug>/subcategories/', SubcategoryListView.as_view(), name='subcategories-by-category'),
 
+    path('about/', CompanyOverviewView.as_view(), name='about-page'),
+
     path('contact/', views.contact, name='contact-page'),
     path('about/', views.about_page, name='about-page'),
 ]
