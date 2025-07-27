@@ -1,3 +1,4 @@
+# guvenlux/guvenluxapp/views.py
 from django.shortcuts import render
 from django.urls import reverse
 from django.shortcuts import get_object_or_404
@@ -10,6 +11,7 @@ from guvenluxapp.models import (
     Product,
     Category,
     BackgroundImage,
+    Company
 )
 
 __all__ = [
@@ -17,9 +19,10 @@ __all__ = [
     'ProductDetailView',
     'ProductPageView',
     'SubcategoryListView',
-    'CategoryDetailView'
-
+    'CategoryDetailView',
+    "CompanyOverviewView"    
 ]
+
 
 class HomePageView(View):
     def get(self, request):
@@ -79,6 +82,13 @@ class SubcategoryListView(View):
             'parent_category': parent_category,
             'subcategories': subcategories
         })
+
+
+class CompanyOverviewView(View):
+    def get(self, request):
+        companies = Company.objects.prefetch_related('employees').all()
+        return render(request, 'about.html', {'companies': companies})
+
 
 def contact(request):
     return render(request, 'contact.html')
