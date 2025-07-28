@@ -1,40 +1,31 @@
 from django.db import models
 from django.utils.text import slugify
-
 from .category import Category
 
-
 class Product(models.Model):
-    category = models.ForeignKey(
+    main_category = models.ForeignKey(
         Category,
         on_delete=models.PROTECT,
-        related_name='products',
-        verbose_name='Kateqoriya'
+        related_name='main_category_products',
+        verbose_name='Əsas kateqoriya',
+        limit_choices_to={'parent_category__isnull': True},
+        null=True  # Əsas kateqoriya boş ola bilər
     )
-    name = models.CharField(
-        max_length=150,
-        verbose_name='Ad'
+    sub_category = models.ForeignKey(
+        Category,
+        on_delete=models.PROTECT,
+        related_name='sub_category_products',
+        verbose_name='Alt kateqoriya',
+        limit_choices_to={'parent_category__isnull': False},
+        null=True  # ALT KATEQORİYA da boş ola bilər
     )
-    description = models.TextField(
-        max_length=500,
-        verbose_name='Haqqında'
-    )
+    name = models.CharField(max_length=150, verbose_name='Ad')
+    description = models.TextField(max_length=500, verbose_name='Haqqında')
     slug = models.SlugField(max_length=150, unique=True, blank=True, null=True)
-
-    price = models.FloatField(
-        verbose_name='Qiymət'   
-    )
-    created_at = models.DateTimeField(
-        auto_now_add=True,
-    )
-    is_active = models.BooleanField(
-        default=True,
-        verbose_name='Məhsul aktivliyi'
-    )
-    is_popular = models.BooleanField(
-        default=False,
-        verbose_name = 'Ana səhifədə olacaq seçili məhsul'
-    )
+    price = models.FloatField(verbose_name='Qiymət')
+    created_at = models.DateTimeField(auto_now_add=True)
+    is_active = models.BooleanField(default=True, verbose_name='Məhsul aktivliyi')
+    is_popular = models.BooleanField(default=False, verbose_name='Ana səhifədə olacaq seçili məhsul')
 
     def get_main_image_url(self):
         first_image = self.images.first()
@@ -45,11 +36,10 @@ class Product(models.Model):
         if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
+
     def __str__(self):
         return self.name
-    
+
     class Meta:
         verbose_name = 'Məhsul'
         verbose_name_plural = 'Məhsullar'
-    
-   
