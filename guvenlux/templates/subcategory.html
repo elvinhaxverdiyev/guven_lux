@@ -90,14 +90,17 @@
           <div class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
 
             {% for subcat in subcategories %}
-            <div class="col">
-              <a href="{% url 'category-detail' subcat.slug %}">
-                <div class="border rounded p-3 mb-4 text-center">{{ subcat.name }}</div>
-              </a>
-            </div>
+              <div class="col">
+                <a href="{% url 'products-by-subcategory' subcat.slug %}">
+
+                  <div class="border rounded p-3 mb-4 text-center">{{ subcat.name }}</div>
+                </a>
+              </div>
             {% empty %}
-            <p class="text-center">Alt kateqoriya yoxdur.</p>
+              <p class="text-center">Alt kateqoriya yoxdur.</p>
             {% endfor %}
+
+
 
           </div>
         </div>

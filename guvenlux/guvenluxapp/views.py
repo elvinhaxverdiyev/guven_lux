@@ -6,6 +6,8 @@ from django.views import View
 from django.core.paginator import Paginator
 from django.views.generic import DetailView
 from django.http import JsonResponse
+from django.views.generic import ListView
+from django.db.models import Q
 
 from guvenluxapp.models import (
     Product,
@@ -17,16 +19,16 @@ from guvenluxapp.models import (
 __all__ = [
     'HomePageView',
     'ProductDetailView',
-    'ProductPageView',
     'SubcategoryListView',
     'CategoryDetailView',
-    "CompanyOverviewView"    
+    "CompanyOverviewView" ,
+    'ProductsListView'   
 ]
 
 
 class HomePageView(View):
     def get(self, request):
-        background_images = BackgroundImage.objects.all()
+        background_images = BackgroundImage.objects.filter(page='index').order_by('-created_at')
         popular_products = Product.objects.filter(
             is_active=True, is_popular=True
             ).order_by('-created_at')
@@ -37,6 +39,7 @@ class HomePageView(View):
             })
 
 
+
 class CategoryDetailView(DetailView):
     model = Category
     context_object_name = 'category'
@@ -44,22 +47,22 @@ class CategoryDetailView(DetailView):
     slug_url_kwarg = 'slug'
 
 
-class ProductPageView(View):
-    def get(self, request):
-        products_list  = Product.objects.filter(is_active=True).order_by('-created_at')
-        category = Category.objects.all()
-        categories = Category.objects.filter(parent_category=None)
-        paginator = Paginator(products_list, 9)  
-        page_number = request.GET.get('page')
-        products = paginator.get_page(page_number)
+        
+class ProductsListView(ListView):
+    model = Product
+    context_object_name = 'products'
+    template_name = 'products_list.html'
 
-        return render(request, 'product.html', {
-            'products': products,
-            'categories': categories,
-            'category': category,
-            'paginator': paginator,
-            'page_obj': products, 
-            })
+    def get_queryset(self):
+        slug = self.kwargs['slug']
+        return Product.objects.filter(
+            Q(main_category__slug=slug) | Q(sub_category__slug=slug)
+        )
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['subcategory'] = get_object_or_404(Category, slug=self.kwargs['slug'])
+        return context
 
 
 class ProductDetailView(View):
@@ -67,11 +70,10 @@ class ProductDetailView(View):
         product = get_object_or_404(Product, slug=product_slug)
         categories = Category.objects.filter(parent_category=None)
 
-        return render(request, 'product-detail.html', {
+        return render(request, 'product_detail.html', {
             'product': product,
             'categories': categories
-            })
-
+        })
 
 class SubcategoryListView(View):
     def get(self, request, category_slug):
@@ -87,11 +89,13 @@ class SubcategoryListView(View):
 class CompanyOverviewView(View):
     def get(self, request):
         companies = Company.objects.prefetch_related('employees').all()
-        return render(request, 'about.html', {'companies': companies})
+        bg_image = BackgroundImage.objects.filter(page='about').order_by('-created_at').first()
+        return render(request, 'about.html', {
+            'companies': companies,
+            'bg_image': bg_image,
+        })
 
 
 def contact(request):
-    return render(request, 'contact.html')
-
-def about_page(request):
-    return render(request, 'about.html')
+    bg_image = BackgroundImage.objects.filter(page='contact').order_by('-id').first()
+    return render(request, 'contact.html', {'bg_image': bg_image})
