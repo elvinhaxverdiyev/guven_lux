@@ -69,20 +69,23 @@ class ProductDetailView(View):
     def get(self, request, product_slug):
         product = get_object_or_404(Product, slug=product_slug)
         categories = Category.objects.filter(parent_category=None)
-
+        bg_image = BackgroundImage.objects.filter(page='products_detail').order_by('-id').first()
         return render(request, 'product_detail.html', {
             'product': product,
-            'categories': categories
+            'categories': categories,
+            'bg_image': bg_image
         })
 
 class SubcategoryListView(View):
     def get(self, request, category_slug):
         parent_category = get_object_or_404(Category, slug=category_slug)
         subcategories = Category.objects.filter(parent_category=parent_category)
+        bg_image = BackgroundImage.objects.filter(page='subcategory').order_by('-id').first()
 
         return render(request, 'subcategory.html', {
             'parent_category': parent_category,
-            'subcategories': subcategories
+            'subcategories': subcategories,
+            'bg_image': bg_image
         })
 
 
