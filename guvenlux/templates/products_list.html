@@ -41,16 +41,18 @@
     <div class="fixed-top">
       <div class="container px-0">
         <nav class="navbar navbar-expand-lg navbar-freya navbar-light"> <a class="navbar-brand" href="{% url 'index' %}">
-            <div class="freya-logo">logo yeri</div>
+            <div class="freya-logo" style="background: none;">
+              <img src="{% static 'assets/img/logo/guvenlux-logo.png' %}" alt="GuvenLux Logo" style="height: 30px; width: auto;">
+            </div>
           </a><button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNavbarCollapse" aria-controls="primaryNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="hamburger hamburger--emphatic"><span class="hamburger-box"><span class="hamburger-inner"></span></span></span></button>
           <div class="collapse navbar-collapse" id="primaryNavbarCollapse">
             <ul class="navbar-nav py-3 py-lg-0 mt-1 mb-2 my-lg-0 ms-lg-n1">
               <li class="nav-item dropdown"><a class="nav-link  " href="{% url 'index' %}" role="button"  aria-expanded="false">Home</a>
               </li>
-              <li class="nav-item dropdown"><a class="nav-link " href="../pages/about.html" role="button" aria-expanded="false">Haqqimizda</a>
+              <li class="nav-item dropdown"><a class="nav-link " href="{% url 'about-page' %}" role="button" aria-expanded="false">Haqqimizda</a>
 
               </li>
-              <li class="nav-item dropdown"><a class="nav-link " href="../contact/contact1.html" role="button" aria-expanded="false">Elaqe</a>
+              <li class="nav-item dropdown"><a class="nav-link " href="{% url 'contact-page' %}" role="button" aria-expanded="false">Elaqe</a>
               </li>
               <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle dropdown-indicator" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kataloq</a>
@@ -81,11 +83,14 @@
     <!-- ============================================-->
     <!-- <section> begin ============================-->
 <section class="py-9 overflow-hidden text-center" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-  <div class="bg-holder overlay overlay-1" style="background-image:url(../assets/img/projects_header.jpg);" data-parallax="data-parallax"></div>
+  <div class="bg-holder overlay overlay-1"
+       style="background-image: url('{{ background_image.image.url }}');"
+       data-parallax="data-parallax">
+  </div>
+
   <!--/.bg-holder-->
   <div class="container">
     <div class="overflow-hidden">
-      <h1 class="fs-5 fs-sm-6 text-white mb-3" data-zanim-xs='{"delay":0}'>devis 3 4</h1>
     </div>
   </div><!-- end of .container-->
 
@@ -93,7 +98,14 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-10">
-          <h3 class="mb-4">Filterlənmiş məhsullar</h3>
+          <h3 class="mb-4" style="
+            font-weight: 500;
+            font-size: 30px;
+            font-family: 'Jost', sans-serif;
+            letter-spacing: 3px;
+            color: #212529;">
+            Filterlenmis məhsullar
+          </h3>
         </div>
       </div>
       <div class="row mt-6 mt-lg-0">
@@ -154,8 +166,8 @@
         <h5 class="text-uppercase mb-3">Menyu</h5>
         <ul class="list-unstyled">
           <li><a href="{% url 'index' %}" class="text-white text-decoration-none d-block mb-2">Ana sehife</a></li>
-          <li><a href="about.html" class="text-white text-decoration-none d-block mb-2">Haqqımızda</a></li>
-          <li><a href="contact.html" class="text-white text-decoration-none d-block mb-2">Əlaqə</a></li>
+          <li><a href="{% url 'about-page' %}" class="text-white text-decoration-none d-block mb-2">Haqqımızda</a></li>
+          <li><a href="{% url 'contact-page' %}" class="text-white text-decoration-none d-block mb-2">Əlaqə</a></li>
         </ul>
       </div>
 

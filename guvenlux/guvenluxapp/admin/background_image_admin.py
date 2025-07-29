@@ -1,6 +1,8 @@
 from django.contrib import admin
 from guvenluxapp.models.background_image import BackgroundImage
 
+admin.site.site_header = 'Guvenlux Admin'
+
 @admin.register(BackgroundImage)
 class BackgroundImageAdmin(admin.ModelAdmin):
     list_display = ('id', 'page', 'image', 'created_at')  # page əlavə edildi

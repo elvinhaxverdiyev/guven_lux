@@ -62,7 +62,11 @@ class ProductsListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['subcategory'] = get_object_or_404(Category, slug=self.kwargs['slug'])
+        bg_image = BackgroundImage.objects.filter(page='products_list').order_by('-created_at').first()
+        context['background_image'] = bg_image
+        
         return context
+
 
 
 class ProductDetailView(View):
