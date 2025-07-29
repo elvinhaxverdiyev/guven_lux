@@ -7,7 +7,8 @@ class BackgroundImage(models.Model):
         ('about', 'Haqqimizda'),
         ('contact', 'Bizimle Elaqe'),
         ('subcategory', 'Alt Kategorya Sehifesi'),
-        ('products_detail', 'Mehsul Sehifesi')
+        ('products_detail', 'Mehsul Sehifesi'),
+        ('products_list', 'Filterlenmis mehsullar shifesi')
     ]
     page = models.CharField(max_length=20, choices=PAGE_CHOICES, default='index')
     title = models.CharField(max_length=255, blank=True, null=True)
