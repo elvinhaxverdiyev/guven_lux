@@ -3,10 +3,11 @@ from django.db import models
 
 class BackgroundImage(models.Model):
     PAGE_CHOICES = [
-        ('index', 'Index Page'),
-        ('about', 'About Page'),
-        ('contact', 'Contact Page'),
-        # başqa səhifələr
+        ('index', 'Ana Sehife'),
+        ('about', 'Haqqimizda'),
+        ('contact', 'Bizimle Elaqe'),
+        ('subcategory', 'Alt Kategorya Sehifesi'),
+        ('products_detail', 'Mehsul Sehifesi')
     ]
     page = models.CharField(max_length=20, choices=PAGE_CHOICES, default='index')
     title = models.CharField(max_length=255, blank=True, null=True)

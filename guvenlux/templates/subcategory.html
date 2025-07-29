@@ -46,7 +46,7 @@
               </li>
              <a class="nav-link" href="{% url 'contact-page' %}">Elaqe</a>
               </li>
-              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle dropdown-indicator" href="JavaScript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">kataloq</a>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle dropdown-indicator" href="JavaScript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kataloq</a>
                 <ul class="dropdown-menu">
                 {% for cat in main_categories %}
                 <li>
@@ -65,11 +65,18 @@
     </div>
 
     <section class="py-9 overflow-hidden text-center" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-      <div class="bg-holder overlay overlay-1" style="background-image:url(../assets/img/elements_header.jpg);" data-parallax="data-parallax"></div>
+      <div class="bg-holder overlay overlay-1"
+        {% if bg_image %}
+          style="background-image: url('{{ bg_image.image.url }}');"
+        {% else %}
+          style="background-image: none;"
+        {% endif %}
+        data-parallax="data-parallax">
+      </div>
       <!--/.bg-holder-->
       <div class="container">
         <div class="overflow-hidden">
-          <h1 class="fs-5 fs-sm-6 text-white mb-3" data-zanim-xs='{"delay":0}'>Devisons</h1>
+          <h1 class="fs-5 fs-sm-6 text-white mb-3" data-zanim-xs='{"delay":0}'>Axtardiğınız hər şey burda!</h1>
         </div>
 
       </div>
@@ -82,31 +89,71 @@
         </div>
       </div>
 
+
+
       <section>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
+  <div class="container">
+    <h3 class="text-center mb-5">Alt Kateqoriyalar</h3>
 
-          <div class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+    <style>
+      .subcategory-box {
+        background-color: #f8f9fa;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease-in-out;
+        font-weight: 500;
+        font-size: 16px;
+        color: #212529;
+      }
 
-            {% for subcat in subcategories %}
-              <div class="col">
-                <a href="{% url 'products-by-subcategory' subcat.slug %}">
+      .subcategory-box:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
+        background-color: #e9ecef;
+        cursor: pointer;
+      }
 
-                  <div class="border rounded p-3 mb-4 text-center">{{ subcat.name }}</div>
-                </a>
+      .subcategory-icon-wrapper {
+        background-color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin: 0 auto 12px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .subcategory-icon {
+        font-size: 28px;
+        background: linear-gradient(135deg, #000000, #FFD700); /* Qara və Sarı qarışıq */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+
+    <div class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+      {% for subcat in subcategories %}
+        <div class="col mb-4">
+          <a href="{% url 'products-by-subcategory' subcat.slug %}" class="text-decoration-none">
+            <div class="subcategory-box text-center">
+              <div class="subcategory-icon-wrapper">
+                <i class="fas fa-microchip subcategory-icon"></i> <!-- Kreativ ikon -->
               </div>
-            {% empty %}
-              <p class="text-center">Alt kateqoriya yoxdur.</p>
-            {% endfor %}
-
-
-
-          </div>
+              {{ subcat.name }}
+            </div>
+          </a>
         </div>
-      </div>
-    </div><!-- end of .container-->
-</section><!-- <section> close ============================-->
+      {% empty %}
+        <p class="text-center">Alt kateqoriya yoxdur.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+
 
 
 <footer class="bg-secondary text-white pt-5 pb-4 mt-5">

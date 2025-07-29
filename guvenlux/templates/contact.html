@@ -52,7 +52,7 @@
               </li>
               <a class="nav-link" href="{% url 'contact-page' %}">Elaqe</a>
               </li>
-              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle dropdown-indicator" href="JavaScript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">kataloq</a>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle dropdown-indicator" href="JavaScript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kataloq</a>
                 <ul class="dropdown-menu">
                 {% for cat in main_categories %}
                 <li>
@@ -78,7 +78,7 @@
   <!--/.bg-holder-->
   <div class="container">
     <div class="overflow-hidden">
-      <h1 class="fs-5 fs-sm-6 text-white mb-3" data-zanim-xs='{"delay":0}'>Devis</h1>
+      <h1 class="fs-5 fs-sm-6 text-white mb-3" data-zanim-xs='{"delay":0}'>Sadece bir click uzaqda!</h1>
     </div>
   </div>
 </section>
@@ -128,9 +128,9 @@
       <div class="col-md-4 mb-4">
         <h5 class="text-uppercase mb-3">Menyu</h5>
         <ul class="list-unstyled">
-          <li><a href="../index.html" class="text-white text-decoration-none d-block mb-2">Ana sehife</a></li>
-          <li><a href="../pages/about.html" class="text-white text-decoration-none d-block mb-2">Haqqımızda</a></li>
-          <li><a href="../contact/contact1.html" class="text-white text-decoration-none d-block mb-2">Əlaqə</a></li>
+          <li><a href="{% url 'index' %}" class="text-white text-decoration-none d-block mb-2">Ana sehife</a></li>
+          <li><a href="{% url 'about-page' %}" class="text-white text-decoration-none d-block mb-2">Haqqımızda</a></li>
+          <li><a href="{% url 'contact-page' %}" class="text-white text-decoration-none d-block mb-2">Əlaqə</a></li>
         </ul>
       </div>
 
