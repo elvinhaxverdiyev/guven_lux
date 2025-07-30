@@ -1,4 +1,3 @@
-# guvenlux/guvenluxapp/models/company.py
 from django.db import models
 
 
