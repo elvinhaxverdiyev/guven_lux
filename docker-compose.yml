@@ -23,5 +23,16 @@ services:
     env_file:
       - .env
 
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./ngnx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./static:/app/static
+      - ./media:/app/media
+    depends_on:
+      - web
+
 volumes:
   postgres_data:
