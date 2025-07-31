@@ -39,62 +39,67 @@
 
   <body>
     <div class="fixed-top">
-      <div class="container px-0">
-        <nav class="navbar navbar-expand-lg navbar-freya navbar-light"> <a class="navbar-brand" href="{% url 'index' %}">
-            <div class="freya-logo" style="background: none;">
-              <img src="{% static 'assets/img/logo/guvenlux-logo.png' %}" alt="GuvenLux Logo" style="height: 30px; width: auto;">
-            </div>
-          </a><button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNavbarCollapse" aria-controls="primaryNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="hamburger hamburger--emphatic"><span class="hamburger-box"><span class="hamburger-inner"></span></span></span></button>
-          <div class="collapse navbar-collapse" id="primaryNavbarCollapse">
-            <ul class="navbar-nav py-3 py-lg-0 mt-1 mb-2 my-lg-0 ms-lg-n1">
-              <li class="nav-item dropdown"><a class="nav-link  " href="{% url 'index' %}" role="button"  aria-expanded="false">Home</a>
-              </li>
-              <li class="nav-item dropdown"><a class="nav-link " href="{% url 'about-page' %}" role="button" aria-expanded="false">Haqqimizda</a>
+  <div class="container px-0">
+    <nav class="navbar navbar-expand-lg navbar-freya navbar-light">
+      <a class="navbar-brand" href="{% url 'index' %}">
+        <div class="freya-logo" style="background: none;">
+          <span style="font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 200; letter-spacing: 0px; color: #1a1a1a; text-transform: uppercase; font-style: italic; padding-top: 8px; padding-bottom: 8px; display: inline-block;">Guvenlux</span>
+        </div>
+      </a>
 
-              </li>
-              <li class="nav-item dropdown"><a class="nav-link " href="{% url 'contact-page' %}" role="button" aria-expanded="false">Elaqe</a>
-              </li>
-              <li class="nav-item dropdown">
+      <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNavbarCollapse" aria-controls="primaryNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger hamburger--emphatic"><span class="hamburger-box"><span class="hamburger-inner"></span></span></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="primaryNavbarCollapse">
+        <ul class="navbar-nav py-3 py-lg-0 mt-1 mb-2 my-lg-0 ms-lg-n1">
+          <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'about-page' %}">Haqqımızda</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'contact-page' %}">Əlaqə</a></li>
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle dropdown-indicator" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kataloq</a>
             <ul class="dropdown-menu">
-                {% for cat in main_categories %}
-                <li>
-                    <!-- Burada artıq subcategory.html-ə yönləndiririk -->
-                    <a class="dropdown-item" href="{% url 'subcategories-by-category' category_slug=cat.slug %}">
-                    {{ cat.name }}
-                    </a>
-                </li>
-                {% empty %}
-                <li><span class="dropdown-item text-muted">Heç bir kateqoriya yoxdur</span></li>
-                {% endfor %}
+              {% for cat in main_categories %}
+              <li>
+                <a class="dropdown-item" href="{% url 'subcategories-by-category' category_slug=cat.slug %}">
+                  {{ cat.name }}
+                </a>
+              </li>
+              {% empty %}
+              <li><span class="dropdown-item text-muted">Heç bir kateqoriya yoxdur</span></li>
+              {% endfor %}
             </ul>
-            </li>
-            </ul>
-            <ul class="navbar-nav ms-lg-auto flex-row justify-content-center py-3 py-lg-0 me-n2">
-              <li><a class="nav-link px-2" href="index.html#"><span class="fab fa-facebook-f" data-fa-transform="shrink-2"></span></a></li>
-              <li><a class="nav-link px-2" href="index.html#"><span class="fab fa-whatsapp" data-fa-transform="shrink-2"></span></a></li>
-              <li><a class="nav-link px-2" href="index.html#"><span class="fab fa-instagram" data-fa-transform="shrink-2"></span></a></li>
-            </ul>
-          </div>
-        </nav>
+          </li>
+        </ul>
+
+        <!-- Sosial Media Linkləri -->
+        <ul class="navbar-nav ms-lg-auto flex-row justify-content-center py-3 py-lg-0 me-n2">
+          <li><a class="nav-link px-2" href="https://facebook.com/" target="_blank"><span class="fab fa-facebook-f" data-fa-transform="shrink-2"></span></a></li>
+          <li><a class="nav-link px-2" href="https://wa.me/994xxxxxxxxx" target="_blank"><span class="fab fa-whatsapp" data-fa-transform="shrink-2"></span></a></li>
+          <li><a class="nav-link px-2" href="https://instagram.com/" target="_blank"><span class="fab fa-instagram" data-fa-transform="shrink-2"></span></a></li>
+        </ul>
       </div>
-    </div>
+    </nav>
+  </div>
+</div>
+
 
     <!-- ============================================-->
+ <!-- ============================================-->
     <!-- <section> begin ============================-->
-<section class="py-9 overflow-hidden text-center" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-  <div class="bg-holder overlay overlay-1"
+    <section class="py-9 overflow-hidden text-center" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+      <div class="bg-holder overlay overlay-1"
        style="background-image: url('{{ background_image.image.url }}');"
        data-parallax="data-parallax">
-  </div>
+      </div>
+        <div class="overflow-hidden">
+          <h1 class="fs-5 fs-sm-6 text-white mb-3" data-zanim-xs='{"delay":0}'></h1>
+        </div>
 
-  <!--/.bg-holder-->
-  <div class="container">
-    <div class="overflow-hidden">
-    </div>
-  </div><!-- end of .container-->
-
-  <section class="bg-white text-center">
+      </div><!-- end of .container-->
+    </section><!-- <section> close ============================-->
+    <!-- ============================================-->
+<section class="bg-white text-center">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-10">

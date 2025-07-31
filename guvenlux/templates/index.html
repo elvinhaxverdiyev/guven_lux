@@ -1,6 +1,5 @@
 {% load static %}
 
-
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
 
@@ -25,7 +24,6 @@
     <meta name="msapplication-TileImage" content="{% static 'assets/img/favicons/mstile-150x150.png' %}">
     <meta name="theme-color" content="#ffffff">
 
-
     <link href="{% static 'vendors/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
     <link href="{% static 'vendors/hamburgers/hamburgers.min.css' %}" rel="stylesheet">
     <link href="{% static 'vendors/loaders.css/loaders.min.css' %}" rel="stylesheet">
@@ -40,41 +38,44 @@
     <div class="fixed-top">
       <div class="container px-0">
         <nav class="navbar navbar-expand-lg navbar-freya navbar-light"> 
-            <a class="navbar-brand" href="{% url 'index' %}">
+          <a class="navbar-brand" href="{% url 'index' %}">
             <div class="freya-logo" style="background: none;">
-              <img src="{% static 'assets/img/logo/guvenlux-logo.png' %}" alt="GuvenLux Logo" style="height: 30px; width: auto;">
+              <span style="font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 200; letter-spacing: 0px; color: #1a1a1a; text-transform: uppercase; font-style: italic; padding-top: 8px; padding-bottom: 8px; display: inline-block;">Guvenlux</span>
             </div>
-
-
-
-          </a><button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNavbarCollapse" aria-controls="primaryNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="hamburger hamburger--emphatic"><span class="hamburger-box"><span class="hamburger-inner"></span></span></span></button>
+          </a>
+          <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNavbarCollapse" aria-controls="primaryNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="hamburger hamburger--emphatic">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </span>
+          </button>
           <div class="collapse navbar-collapse" id="primaryNavbarCollapse">
             <ul class="navbar-nav py-3 py-lg-0 mt-1 mb-2 my-lg-0 ms-lg-n1">
-              <li class="nav-item dropdown"><a class="nav-link  " href="{% url 'index' %}" role="button"  aria-expanded="false">Home</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="{% url 'index' %}" role="button" aria-expanded="false">Home</a>
               </li>
-              <a class="nav-link" href="{% url 'about-page' %}">Haqqimizda</a>
-
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about-page' %}">Haqqimizda</a>
               </li>
-              <a class="nav-link" href="{% url 'contact-page' %}">Elaqe</a>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact-page' %}">Elaqe</a>
               </li>
-            <!-- MENYUDA DUZƏLİŞ -->
-            <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle dropdown-indicator" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kataloq</a>
-            <ul class="dropdown-menu">
-                {% for cat in main_categories %}
-                <li>
-                    <!-- Burada artıq subcategory.html-ə yönləndiririk -->
+              <!-- MENYUDA DUZƏLİŞ -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle dropdown-indicator" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kataloq</a>
+                <ul class="dropdown-menu">
+                  {% for cat in main_categories %}
+                  <li>
                     <a class="dropdown-item" href="{% url 'subcategories-by-category' category_slug=cat.slug %}">
-                    {{ cat.name }}
+                      {{ cat.name }}
                     </a>
-                </li>
-                {% empty %}
-                <li><span class="dropdown-item text-muted">Heç bir kateqoriya yoxdur</span></li>
-                {% endfor %}
-            </ul>
-            </li>
-
-
+                  </li>
+                  {% empty %}
+                  <li><span class="dropdown-item text-muted">Heç bir kateqoriya yoxdur</span></li>
+                  {% endfor %}
+                </ul>
+              </li>
             </ul>
             <ul class="navbar-nav ms-lg-auto flex-row justify-content-center py-3 py-lg-0 me-n2">
               <li><a class="nav-link px-2" href="index.html#"><span class="fab fa-facebook-f" data-fa-transform="shrink-2"></span></a></li>
@@ -210,9 +211,6 @@
     </div>
   </div>
 </footer>
-
-
-
 
     <!-- ===============================================-->
     <!--    JavaScripts-->
