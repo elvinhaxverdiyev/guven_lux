@@ -1,156 +1,120 @@
 {% load static %}
-
-
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
 
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Freya | Website, template crafting machine</title>
 
-    <!-- ===============================================-->
-    <!--    Document Title-->
-    <!-- ===============================================-->
-    <title>Freya | Website, template crafting machine</title>
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static '/assets/img/favicons/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static '/assets/img/favicons/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static '/assets/img/favicons/favicon-16x16.png' %}">
+  <link rel="shortcut icon" type="image/x-icon" href="{% static '/assets/img/favicons/favicon.ico' %}">
+  <link rel="manifest" href="https://prium.github.io/freya/v2.1.0/assets/img/favicons/manifest.json">
+  <meta name="msapplication-TileImage" content="{% static '/assets/img/favicons/mstile-150x150.png' %}">
+  <meta name="theme-color" content="#ffffff">
 
-    <!-- ===============================================-->
-    <!--    Favicons-->
-    <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static '/assets/img/favicons/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static '/assets/img/favicons/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/assets/img/favicons/favicon-16x16.png' %}">
-    <link rel="shortcut icon" type="image/x-icon" href="{% static '/assets/img/favicons/favicon.ico' %}">
-    <link rel="manifest" href="https://prium.github.io/freya/v2.1.0/assets/img/favicons/manifest.json">
-    <meta name="msapplication-TileImage" content="{% static '/assets/img/favicons/mstile-150x150.png' %}">
-    <meta name="theme-color" content="#ffffff">
+  <!-- Stylesheets -->
+  <link href="{% static '/vendors/prism/prism.css' %}" rel="stylesheet">
+  <link href="{% static '/vendors/hamburgers/hamburgers.min.css' %}" rel="stylesheet">
+  <link href="{% static '/vendors/loaders.css/loaders.min.css' %}" rel="stylesheet">
+  <link href="{% static '/assets/css/theme.min.css' %}" rel="stylesheet" />
+  <link href="{% static '/assets/css/user.min.css' %}" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
 
-    <!-- ===============================================-->
-    <!--    Stylesheets-->
-    <!-- ===============================================-->
-    <link href="{% static '/vendors/prism/prism.css' %}" rel="stylesheet">
-    <link href="{% static '/vendors/hamburgers/hamburgers.min.css' %}" rel="stylesheet">
-    <link href="{% static '/vendors/loaders.css/loaders.min.css' %}" rel="stylesheet">
-    <link href="{% static '/assets/css/theme.min.css' %}" rel="stylesheet" />
-    <link href="{% static '/assets/css/user.min.css' %}" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&amp;family=Jost:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
-  </head>
+<body>
+  <!-- Navbar -->
+  <div class="fixed-top">
+    <div class="container px-0">
+      <nav class="navbar navbar-expand-lg navbar-freya navbar-light">
+        <a class="navbar-brand" href="{% url 'index' %}">
+          <div class="freya-logo" style="background: none;">
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 200; letter-spacing: 0px; color: #1a1a1a; text-transform: uppercase; font-style: italic; padding-top: 8px; padding-bottom: 8px; display: inline-block;">Guvenlux</span>
+          </div>
+        </a>
+        <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNavbarCollapse" aria-controls="primaryNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="hamburger hamburger--emphatic">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </span>
+        </button>
 
-  <body>
-    <div class="fixed-top">
-  <div class="container px-0">
-    <nav class="navbar navbar-expand-lg navbar-freya navbar-light">
-      <a class="navbar-brand" href="{% url 'index' %}">
-        <div class="freya-logo" style="background: none;">
-          <span style="font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 200; letter-spacing: 0px; color: #1a1a1a; text-transform: uppercase; font-style: italic; padding-top: 8px; padding-bottom: 8px; display: inline-block;">Guvenlux</span>
+        <div class="collapse navbar-collapse" id="primaryNavbarCollapse">
+          <ul class="navbar-nav py-3 py-lg-0 mt-1 mb-2 my-lg-0 ms-lg-n1">
+            <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'about-page' %}">Haqqımızda</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'contact-page' %}">Əlaqə</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle dropdown-indicator" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kataloq</a>
+              <ul class="dropdown-menu">
+                {% for cat in main_categories %}
+                  <li><a class="dropdown-item" href="{% url 'subcategories-by-category' category_slug=cat.slug %}">{{ cat.name }}</a></li>
+                {% empty %}
+                  <li><span class="dropdown-item text-muted">Heç bir kateqoriya yoxdur</span></li>
+                {% endfor %}
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-lg-auto flex-row justify-content-center py-3 py-lg-0 me-n2">
+            <li><a class="nav-link px-2" href="https://facebook.com/" target="_blank"><span class="fab fa-facebook-f" data-fa-transform="shrink-2"></span></a></li>
+            <li><a class="nav-link px-2" href="https://wa.me/994xxxxxxxxx" target="_blank"><span class="fab fa-whatsapp" data-fa-transform="shrink-2"></span></a></li>
+            <li><a class="nav-link px-2" href="https://instagram.com/" target="_blank"><span class="fab fa-instagram" data-fa-transform="shrink-2"></span></a></li>
+          </ul>
         </div>
-      </a>
-
-      <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNavbarCollapse" aria-controls="primaryNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="hamburger hamburger--emphatic"><span class="hamburger-box"><span class="hamburger-inner"></span></span></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="primaryNavbarCollapse">
-        <ul class="navbar-nav py-3 py-lg-0 mt-1 mb-2 my-lg-0 ms-lg-n1">
-          <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="{% url 'about-page' %}">Haqqımızda</a></li>
-          <li class="nav-item"><a class="nav-link" href="{% url 'contact-page' %}">Əlaqə</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle dropdown-indicator" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kataloq</a>
-            <ul class="dropdown-menu">
-              {% for cat in main_categories %}
-              <li>
-                <a class="dropdown-item" href="{% url 'subcategories-by-category' category_slug=cat.slug %}">
-                  {{ cat.name }}
-                </a>
-              </li>
-              {% empty %}
-              <li><span class="dropdown-item text-muted">Heç bir kateqoriya yoxdur</span></li>
-              {% endfor %}
-            </ul>
-          </li>
-        </ul>
-
-        <!-- Sosial Media Linkləri -->
-        <ul class="navbar-nav ms-lg-auto flex-row justify-content-center py-3 py-lg-0 me-n2">
-          <li><a class="nav-link px-2" href="https://facebook.com/" target="_blank"><span class="fab fa-facebook-f" data-fa-transform="shrink-2"></span></a></li>
-          <li><a class="nav-link px-2" href="https://wa.me/994xxxxxxxxx" target="_blank"><span class="fab fa-whatsapp" data-fa-transform="shrink-2"></span></a></li>
-          <li><a class="nav-link px-2" href="https://instagram.com/" target="_blank"><span class="fab fa-instagram" data-fa-transform="shrink-2"></span></a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-</div>
-
-
-<section class="py-9 overflow-hidden text-center" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-  <div class="bg-holder overlay overlay-1"
-       {% if bg_image %}
-         style="background-image: url('{{ bg_image.image.url }}');"
-       {% else %}
-         style="background-image: none;"
-       {% endif %}
-       data-parallax="data-parallax">
-  </div>
-
-  <!--/.bg-holder-->
-  <div class="container">
-    <div class="overflow-hidden">
-      <h1 class="fs-5 fs-sm-6 text-white mb-3" data-zanim-xs='{"delay":0}'>TechNova – Gələcəyin texnologiyasını bu gün yaşa!</h1>
+      </nav>
     </div>
-  </div><!-- end of .container-->
-</section>
+  </div>
 
-
-
-
-    <!-- ===============================================-->
-    <!--    Main Content-->
-    <!-- ===============================================-->
-    <main class="main" id="top">
-      <div class="preloader" id="preloader">
-        <div class="loader-box">
-          <div class="loader"></div>
-        </div>
+  <!-- Background Section -->
+  <section class="py-9 overflow-hidden text-center" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+    <div class="bg-holder overlay overlay-1" 
+      {% if bg_image %}
+        style="background-image: url('{{ bg_image.image.url }}');"
+      {% else %}
+        style="background-image: none;"
+      {% endif %}
+      data-parallax="data-parallax">
+    </div>
+    <div class="container">
+      <div class="overflow-hidden">
+        <h1 class="fs-5 fs-sm-6 text-white mb-3" data-zanim-xs='{"delay":0}'>TechNova – Gələcəyin texnologiyasını bu gün yaşa!</h1>
       </div>
+    </div>
+  </section>
 
-    <!-- ============================================-->
-    <!-- <section> begin ============================-->
+  <!-- Main Info -->
+  <main class="main" id="top">
+    <div class="preloader" id="preloader">
+      <div class="loader-box">
+        <div class="loader"></div>
+      </div>
+    </div>
+
     <section class="text-center py-5 bg-light">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-10">
-
-             <!-- Statik Guvenlux məlumatı (admin panel ilə əlaqəsi yoxdur) -->
             <div class="mb-5">
-              <h2 class="mb-3" style="
-                font-weight: 500;
-                font-size: 36px;
-                font-family: 'Jost', sans-serif;
-                letter-spacing: 3px;
-                color: #212529;">
-                Guvenlux
-              </h2>
-
+              <h2 class="mb-3" style="font-weight: 500; font-size: 36px; font-family: 'Jost', sans-serif; letter-spacing: 3px; color: #212529;">Guvenlux</h2>
               <p class="lead mb-3">
                 Guvenlux – işıqlandırma sahəsində keyfiyyətli və innovativ həllər təqdim edən qabaqcıl şirkətdir.
                 Məqsədimiz müştərilərimizə yüksək səviyyəli xidmət göstərmək və müasir texnologiyaları tətbiq etməkdir.
               </p>
             </div>
             <hr>
-
           </div>
         </div>
       </div>
     </section>
-    <!-- <section> close ============================-->
-    <!-- ============================================-->
 
-
-
-
+    <!-- Employees Dynamic Section -->
     <section class="text-center pb-8">
       <div class="container">
         <h2 class="mb-5">Emekdaslar</h2>
@@ -179,92 +143,67 @@
       </div>
     </section>
 
-
-
-
-
-      <section class="pt-0">
-        <div class="container">
-          <h2 class="text-center">staff</h2>
-          <div class="row justify-content-center">
-            <div class="col-lg-11 mt-4">
-              <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                  <h5 class="text-black mt-4 mb-1">Eli ceo(guya)</h5>
-                  <p class="mb-0">elinin nomresi</p>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <h5 class="text-black mt-4 mb-1">Eli ceo(guya)</h5>
-                  <p class="mb-0">elinin nomresi</p>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <h5 class="text-black mt-4 mb-1">Eli ceo(guya)</h5>
-                  <p class="mb-0">elinin nomresi</p>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <h5 class="text-black mt-4 mb-1">Eli ceo(guya)</h5>
-                  <p class="mb-0">elinin nomresi</p>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <h5 class="text-black mt-4 mb-1">Eli ceo(guya)</h5>
-                  <p class="mb-0">elinin nomresi</p>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <h5 class="text-black mt-4 mb-1">Eli ceo(guya)</h5>
-                  <p class="mb-0">elinin nomresi</p>
-                </div>
-
- 
+    <!-- Static Staff Section -->
+    <section class="pt-0">
+      <div class="container">
+        <h2 class="text-center">staff</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-11 mt-4">
+            <div class="row">
+              {% for i in "123456" %}
+              <div class="col-lg-3 col-sm-6">
+                <h5 class="text-black mt-4 mb-1">Eli ceo(guya)</h5>
+                <p class="mb-0">elinin nomresi</p>
               </div>
+              {% endfor %}
             </div>
           </div>
-        </div><!-- end of .container-->
-      </section><!-- <section> close ============================-->
-      <!-- ============================================-->
-
-
-<footer class="bg-secondary text-white pt-5 pb-4 mt-5">
-  <div class="container text-center text-md-start">
-    <div class="row">
-
-      <div class="col-md-4 mb-4">
-        <h5 class="text-uppercase mb-3">Menyu</h5>
-        <ul class="list-unstyled">
-          <li><a href="{% url 'index' %}" class="text-white text-decoration-none d-block mb-2">Ana sehife</a></li>
-          <li><a href="{% url 'about-page' %}" class="text-white text-decoration-none d-block mb-2">Haqqımızda</a></li>
-          <li><a href="{% url 'contact-page' %}" class="text-white text-decoration-none d-block mb-2">Əlaqə</a></li>
-        </ul>
+        </div>
       </div>
+    </section>
+  </main>
 
-      <div class="col-md-4 mb-4 text-center">
-        <h5 class="text-uppercase mb-3">Bizə qoşul</h5>
-        <a href="#" class="text-white me-3"><span class="fab fa-facebook-f"></span></a>
-        <a href="#" class="text-white me-3"><span class="fab fa-whatsapp"></span></a>
-        <a href="#" class="text-white"><span class="fab fa-instagram"></span></a>
+  <!-- Footer -->
+  <footer class="bg-secondary text-white pt-5 pb-4 mt-5">
+    <div class="container text-center text-md-start">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <h5 class="text-uppercase mb-3">Menyu</h5>
+          <ul class="list-unstyled">
+            <li><a href="{% url 'index' %}" class="text-white text-decoration-none d-block mb-2">Ana sehife</a></li>
+            <li><a href="{% url 'about-page' %}" class="text-white text-decoration-none d-block mb-2">Haqqımızda</a></li>
+            <li><a href="{% url 'contact-page' %}" class="text-white text-decoration-none d-block mb-2">Əlaqə</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4 text-center">
+          <h5 class="text-uppercase mb-3">Bizə qoşul</h5>
+          <a href="#" class="text-white me-3"><span class="fab fa-facebook-f"></span></a>
+          <a href="#" class="text-white me-3"><span class="fab fa-whatsapp"></span></a>
+          <a href="#" class="text-white"><span class="fab fa-instagram"></span></a>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="text-uppercase mb-3">Əlaqə</h5>
+          <p class="mb-1 small">Freya Incorporated</p>
+          <p class="mb-1 small">019 Appellation Ave, New Jersey</p>
+          <p class="mb-1 small">535-118-7056</p>
+          <p class="mb-0 small">Template by <a class="text-white-75" href="https://themewagon.com" target="_blank">Themewagon</a></p>
+        </div>
       </div>
-
-      <div class="col-md-4 mb-4">
-        <h5 class="text-uppercase mb-3">Əlaqə</h5>
-        <p class="mb-1 small">Freya Incorporated</p>
-        <p class="mb-1 small">019 Appellation Ave, New Jersey</p>
-        <p class="mb-1 small">535-118-7056</p>
-        <p class="mb-0 small">Template by <a class="text-white-75" href="https://themewagon.com" target="_blank">Themewagon</a></p>
-      </div>
-
     </div>
-  </div>
-</footer>
-    <script src="{% static '/vendors/popper/popper.min.js' %}"></script>
-    <script src="{% static '/vendors/bootstrap/bootstrap.min.js' %}"></script>
-    <script src="{% static '/vendors/is/is.min.js' %}"></script>
-    <script src="{% static '/vendors/prism/prism.js' %}"></script>
-    <script src="{% static '/vendors/fontawesome/all.min.js' %}"></script>
-    <script src="{% static '/vendors/rellax/rellax.min.js' %}"></script>
-    <script src="{% static '/vendors/lodash/lodash.min.js' %}"></script>
-    <script src="{% static '/vendors/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
-    <script src="{% static '/vendors/gsap/gsap.js' %}"></script>
-    <script src="{% static '/vendors/gsap/customEase.js' %}"></script>
-    <script src="{% static '/assets/js/theme.js' %}"></script>
-  </body>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="{% static '/vendors/popper/popper.min.js' %}"></script>
+  <script src="{% static '/vendors/bootstrap/bootstrap.min.js' %}"></script>
+  <script src="{% static '/vendors/is/is.min.js' %}"></script>
+  <script src="{% static '/vendors/prism/prism.js' %}"></script>
+  <script src="{% static '/vendors/fontawesome/all.min.js' %}"></script>
+  <script src="{% static '/vendors/rellax/rellax.min.js' %}"></script>
+  <script src="{% static '/vendors/lodash/lodash.min.js' %}"></script>
+  <script src="{% static '/vendors/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static '/vendors/gsap/gsap.js' %}"></script>
+  <script src="{% static '/vendors/gsap/customEase.js' %}"></script>
+  <script src="{% static '/assets/js/theme.js' %}"></script>
+</body>
 
 </html>
