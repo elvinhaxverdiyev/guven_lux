@@ -27,6 +27,17 @@ class CategoryDetailView(DetailView):
 
 
 class SubcategoryListView(View):
+    """
+    Displays a list of subcategories for a given parent category.
+
+    Args:
+        request: HTTP request object
+        category_slug: slug of the parent category
+
+    Returns:
+        Rendered subcategory.html template with context data
+        including parent category, subcategories list, and background image.
+    """
     def get(self, request, category_slug):
         parent_category = get_object_or_404(Category, slug=category_slug)
         subcategories = Category.objects.filter(parent_category=parent_category)
