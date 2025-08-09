@@ -16,6 +16,10 @@ __all__ = [
 
 
 class CategoryDetailView(DetailView):
+    """
+    DetailView to display a specific Category object
+    identified by slug in the URL.
+    """
     model = Category
     context_object_name = 'category'
     slug_field = 'slug'
