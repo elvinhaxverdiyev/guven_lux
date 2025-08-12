@@ -52,6 +52,20 @@ class ProductsListView(ListView):
 
 
 class ProductDetailView(View):
+    """
+    Displays detailed information for a single product.
+
+    Retrieves the product based on the `product_slug` provided in the URL,
+    along with all top-level categories and a background image for the detail page.
+
+    Template:
+        product_detail.html
+
+    Context:
+        product (Product): The product object being viewed.
+        categories (QuerySet): All top-level categories.
+        bg_image (BackgroundImage or None): Background image for the product detail page.
+    """
     def get(self, request, product_slug):
         product = get_object_or_404(Product, slug=product_slug)
         categories = Category.objects.filter(parent_category=None)
