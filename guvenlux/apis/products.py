@@ -18,6 +18,20 @@ __all__ = [
 
         
 class ProductsListView(ListView):
+    """
+    Displays a list of products filtered by category slug.
+
+    Retrieves products that match either the main category slug
+    or the subcategory slug passed in the URL.
+
+    Template:
+        products_list.html
+
+    Context:
+        products (QuerySet): The filtered list of products.
+        subcategory (Category): The category object for the given slug.
+        background_image (BackgroundImage or None): Background image for the products list page.
+    """
     model = Product
     context_object_name = 'products'
     template_name = 'products_list.html'
