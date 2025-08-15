@@ -11,6 +11,12 @@ class ProductImageInlineFormSet(BaseInlineFormSet):
     in the Django admin or other inline formset contexts.
     """
     def clean(self):
+        """
+        Validates that the number of non-deleted images does not exceed 3.
+
+        Raises:
+            ValidationError: If more than 3 images are submitted.
+        """
         super().clean()
         total_images = 0
         for form in self.forms:
