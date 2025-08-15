@@ -2,8 +2,14 @@ from django.forms.models import BaseInlineFormSet
 from django.core.exceptions import ValidationError
 
 
-# Custom form for product image count control on admin panel
 class ProductImageInlineFormSet(BaseInlineFormSet):
+    """
+    Custom inline formset for validating the number of images attached to a product.
+
+    Ensures that no more than 3 images are uploaded for a single product.
+    This validation is applied when saving related inline image forms
+    in the Django admin or other inline formset contexts.
+    """
     def clean(self):
         super().clean()
         total_images = 0
