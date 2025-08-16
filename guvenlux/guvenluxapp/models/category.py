@@ -23,6 +23,10 @@ class Category(models.Model):
     slug = models.SlugField(max_length=150, unique=True, blank=True, null=True)  # yeni sahə əlavə olundu
     
     def save(self, *args, **kwargs):
+        """
+        Override the save method to automatically generate a slug from the category name
+        if no slug is provided.
+        """
         if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
