@@ -29,6 +29,7 @@ class BackgroundImage(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
+        """Return a human-readable string representation of the background image."""
         return f'Şəkil #{self.id} - {self.page}'
 
     class Meta:
