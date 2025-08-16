@@ -3,6 +3,14 @@ from django.utils.text import slugify
 
 
 class Category(models.Model):
+    """
+    Model representing product categories with support for hierarchical (parent-child) structure.
+
+    Attributes:
+        parent_category (Category): Optional parent category for hierarchical categorization.
+        name (str): The name of the category.
+        slug (str): A unique, URL-friendly identifier automatically generated from the category name.
+    """
     parent_category = models.ForeignKey(
         'self',
         on_delete=models.CASCADE,
