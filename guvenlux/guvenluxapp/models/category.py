@@ -32,6 +32,7 @@ class Category(models.Model):
         super().save(*args, **kwargs)
     
     def __str__(self):
+        """Return the category name as its string representation."""
         return self.name
 
     class Meta:
