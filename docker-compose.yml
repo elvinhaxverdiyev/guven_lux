@@ -13,11 +13,7 @@ services:
   web:
     working_dir: /code/guvenlux
     build: .
-    command: >
-      sh -c "python manage.py collectstatic --noinput &&
-            python manage.py migrate &&
-            gunicorn guvenlux.wsgi:application --bind 0.0.0.0:8000 --workers 4"
-
+    command: gunicorn guvenlux.wsgi:application --bind 0.0.0.0:8000 --workers 4
     volumes:
       # - ./guvenlux:/code/guvenlux
       # - ./guvenlux/media:/code/guvenlux/media
