@@ -1,24 +1,19 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from ..models.employee import Employee
-from ..models.company import Company 
+from ..models.company import Company  # Company modelini import et
 
+@admin.register(Company)
+class CompanyAdmin(admin.ModelAdmin):
+    list_display = ('name', 'logo_preview')  # ad və logo önizləməsi
+    readonly_fields = ('logo_preview',)     # logo önizləməsi readonly olsun
+    search_fields = ('name',)               # şirkət adına görə axtarış
+    list_filter = ()                        # lazım olsa filtrlər əlavə edə bilərsən
 
-@admin.register(Employee)
-class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ('name', 'photo_preview')
-    readonly_fields = ('photo_preview',)
-    exclude = ('position', 'phone', 'company',)
-    search_fields = ('name', 'company__name')
-    list_filter = ('company',)
-
-    def photo_preview(self, obj):
-        if obj.photo:
-            return format_html('<img src="{}" width="60" height="60" style="object-fit: cover; border-radius: 5px;" />', obj.photo.url)
+    def logo_preview(self, obj):
+        if obj.logo:
+            return format_html(
+                '<img src="{}" width="80" height="80" style="object-fit: contain; border-radius: 5px;" />',
+                obj.logo.url
+            )
         return "-"
-    photo_preview.short_description = 'Şəkil Önizləmə'
-
-    def save_model(self, request, obj, form, change):
-        if not obj.company:
-            obj.company = Company.objects.first()  # və ya default şirkət
-        super().save_model(request, obj, form, change)
+    logo_preview.short_description = 'Logo Önizləmə'
