@@ -32,7 +32,10 @@ DEBUG = config('DEBUG', default=True, cast=bool)
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split(',')
 
-
+CSRF_TRUSTED_ORIGINS = [
+    "https://guven-lux.az",
+    "https://www.guven-lux.az",
+]
 # Application definition
 
 INSTALLED_APPS = [
