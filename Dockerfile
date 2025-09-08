@@ -14,4 +14,4 @@ COPY . /app/
 EXPOSE 8000
 
 # Run komandası
-CMD ["gunicorn", "project_name.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "guvenlux.wsgi:application", "--bind", "0.0.0.0:8000"]
