@@ -115,37 +115,76 @@
     </section>
 
     <!-- Employees Dynamic Section -->
-    <section class="text-center pb-8">
+   <section class="text-center pb-8">
   <div class="container">
     <h2 class="mb-5">Şirkətlər</h2>
-    <div class="row justify-content-center">
-      <div class="col-lg-11">
-        <div class="row">
-          {% for company in companies %}
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="p-3">
-                {% if company.logo %}
-                  <img class="img-fluid mb-3" 
-                       style="width: 100%; height: 200px; object-fit: contain; border-radius: 8px;" 
-                       src="{{ company.logo.url }}" 
-                       alt="{{ company.name }}">
-                {% else %}
-                  <img class="img-fluid mb-3" 
-                       style="width: 100%; height: 200px; object-fit: contain; border-radius: 8px;" 
-                       src="{% static 'assets/img/default-company.png' %}" 
-                       alt="{{ company.name }}">
-                {% endif %}
-                <h5 class="text-black mb-1">{{ company.name }}</h5>
-              </div>
-            </div>
-          {% empty %}
-            <p>Hələ heç bir şirkət əlavə edilməyib.</p>
-          {% endfor %}
+    <div class="row justify-content-center company-grid">
+      {% for company in companies %}
+        <div class="col-lg-4 col-md-6 mb-4 company-item">
+          <div class="p-3 company-card">
+            {% if company.logo %}
+              <img class="img-fluid mb-3 company-logo" 
+                   src="{{ company.logo.url }}" 
+                   alt="{{ company.name }}">
+            {% else %}
+              <img class="img-fluid mb-3 company-logo" 
+                   src="{% static 'assets/img/default-company.png' %}" 
+                   alt="{{ company.name }}">
+            {% endif %}
+            <h5 class="text-black mb-1">{{ company.name }}</h5>
+          </div>
         </div>
-      </div>
+      {% empty %}
+        <p>Hələ heç bir şirkət əlavə edilməyib.</p>
+      {% endfor %}
     </div>
   </div>
+
+  <style>
+    /* Şirkət logosu - square, formatdan asılı olmayaraq */
+    .company-logo {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    /* Hover zamanı sağa sürüşmə */
+    .company-card:hover .company-logo {
+      transform: translateX(10px);
+    }
+
+    /* Grid spacing düzgün olsun */
+    .company-item {
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Responsive: 3 sütun large, 2 medium, 1 small */
+    @media (min-width: 992px) {
+      .company-grid .company-item {
+        flex: 0 0 33.3333%;
+        max-width: 33.3333%;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+      .company-grid .company-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .company-grid .company-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+  </style>
 </section>
+
 
 
     <!-- Static Staff Section -->
