@@ -7,6 +7,7 @@ from ..models.employee import Employee
 class EmployeeAdmin(admin.ModelAdmin):
     list_display = ('name', 'photo_preview')
     readonly_fields = ('photo_preview',)
+    exclude = ('position', 'phone', 'company',)
     search_fields = ('name', 'company__name')
     list_filter = ('company',)
 
