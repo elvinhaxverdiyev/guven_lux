@@ -7,13 +7,11 @@ from ..models.employee import Employee
 class EmployeeAdmin(admin.ModelAdmin):
     list_display = ('name', 'photo_preview')
     readonly_fields = ('photo_preview',)
-    exclude = ('position', 'phone', 'company',)  # hələ də exclude saxla
     search_fields = ('name', 'company__name')
     list_filter = ('company',)
 
     def save_model(self, request, obj, form, change):
         if not obj.company:
-            # Məsələn, ilk şirkəti avtomatik təyin et
             from .company import Company
             obj.company = Company.objects.first()
         super().save_model(request, obj, form, change)
