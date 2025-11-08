@@ -1,0 +1,3 @@
+a = "murad"
+
+print(a)

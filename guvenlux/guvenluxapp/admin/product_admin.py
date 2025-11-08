@@ -13,8 +13,7 @@ class ProductImageInline(admin.TabularInline):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'category', 'created_at')
-    list_filter = ('category', 'created_at')
-    search_fields = ('name', 'description')
-    ordering = ('-created_at',)
-    inlines = [ProductImageInline]
+    list_display = ['name', 'main_category', 'sub_category', 'price', 'is_active', 'is_popular']
+    list_filter = ['main_category', 'sub_category', 'is_active', 'is_popular']
+    search_fields = ['name']
+    inlines = [ProductImageInline] 

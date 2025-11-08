@@ -1,6 +1,8 @@
+
 services:
   db:
     image: postgres:15
+    container_name: guvenlux-db
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
@@ -11,17 +13,36 @@ services:
       - "5432:5432"
 
   web:
-    working_dir: /code/guvenlux
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    container_name: guvenlux-web
+    working_dir: /code
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py collectstatic --noinput &&
+             gunicorn guvenlux.wsgi:application --bind 0.0.0.0:8000 --workers 4"
     volumes:
-      - .:/code
+      - ./guvenlux:/code
     ports:
       - "8000:8000"
     depends_on:
       - db
     env_file:
       - .env
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile.nginx
+    container_name: guvenlux-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./guvenlux/staticfiles:/app/static:ro
+      - ./guvenlux/media:/app/media:ro
+      - ./nginx/certs:/etc/ssl/cloudflare:ro
+    depends_on:
+      - web
 
 volumes:
   postgres_data:

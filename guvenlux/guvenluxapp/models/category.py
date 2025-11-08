@@ -3,6 +3,14 @@ from django.utils.text import slugify
 
 
 class Category(models.Model):
+    """
+    Model representing product categories with support for hierarchical (parent-child) structure.
+
+    Attributes:
+        parent_category (Category): Optional parent category for hierarchical categorization.
+        name (str): The name of the category.
+        slug (str): A unique, URL-friendly identifier automatically generated from the category name.
+    """
     parent_category = models.ForeignKey(
         'self',
         on_delete=models.CASCADE,
@@ -15,9 +23,18 @@ class Category(models.Model):
     slug = models.SlugField(max_length=150, unique=True, blank=True, null=True)  # yeni sahə əlavə olundu
     
     def save(self, *args, **kwargs):
+        """
+        Override the save method to automatically generate a slug from the category name
+        if no slug is provided.
+        """
         if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
     
     def __str__(self):
+        """Return the category name as its string representation."""
         return self.name
+
+    class Meta:
+        verbose_name = 'Kategoriya'
+        verbose_name_plural = 'Kategoriyalar'
