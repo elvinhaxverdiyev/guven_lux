@@ -24,7 +24,7 @@
   <link href="{% static '/assets/css/user.min.css' %}" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:ital,wght@0,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -47,11 +47,11 @@
 
         <div class="collapse navbar-collapse" id="primaryNavbarCollapse">
           <ul class="navbar-nav py-3 py-lg-0 mt-1 mb-2 my-lg-0 ms-lg-n1">
-            <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Ana Səhifə</a></li>
             <li class="nav-item"><a class="nav-link" href="{% url 'about-page' %}">Haqqımızda</a></li>
             <li class="nav-item"><a class="nav-link" href="{% url 'contact-page' %}">Əlaqə</a></li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle dropdown-indicator" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kataloq</a>
+              <a class="nav-link dropdown-toggle dropdown-indicator" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Məhsullar</a>
               <ul class="dropdown-menu">
                 {% for cat in main_categories %}
                   <li><a class="dropdown-item" href="{% url 'subcategories-by-category' category_slug=cat.slug %}">{{ cat.name }}</a></li>
@@ -101,7 +101,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-10">
             <div class="mb-5">
-              <h2 class="mb-3" style="font-weight: 500; font-size: 36px; font-family: 'Jost', sans-serif; letter-spacing: 3px; color: #212529;">Guvenlux</h2>
+              <h2 class="mb-3" style="font-weight: 500; font-size: 36px; font-family: 'Google Sans Flex', sans-serif; letter-spacing: 3px; color: #212529;">Guvenlux</h2>
               <p class="lead mb-3">
                 Guvenlux – işıqlandırma sahəsində keyfiyyətli və innovativ həllər təqdim edən qabaqcıl şirkətdir.
                 Məqsədimiz müştərilərimizə yüksək səviyyəli xidmət göstərmək və müasir texnologiyaları tətbiq etməkdir.
@@ -116,7 +116,7 @@
     <!-- Employees Dynamic Section -->
    <section class="text-center pb-8">
   <div class="container">
-    <h2 class="mb-5">Şirkətlər</h2>
+    <h2 class="mb-5">Tərəfdaşlar</h2>
     <div class="row justify-content-center company-grid">
       {% for company in companies %}
         <div class="col-lg-4 col-md-6 mb-4 company-item">
@@ -187,7 +187,7 @@
 
 
     <!-- Static Staff Section -->
-    <section class="pt-0">
+    <!-- <section class="pt-0">
       <div class="container">
         <h2 class="text-center">staff</h2>
         <div class="row justify-content-center">
@@ -203,7 +203,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </main>
 
   <!-- Footer -->

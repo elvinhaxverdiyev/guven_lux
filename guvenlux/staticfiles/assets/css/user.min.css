@@ -2,11 +2,17 @@
   box-sizing: border-box;
 }
 
+/* Bütün sayt üçün Google Sans Flex şrifti */
+:root {
+  --freya-body-font-family: 'Google Sans Flex', 'Segoe UI', Tahoma, Arial, sans-serif;
+}
+
 html {
   height: 100%;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  font-family: 'Google Sans Flex', 'Segoe UI', Tahoma, Arial, sans-serif;
 }
 
 body {
@@ -15,6 +21,94 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: 'Google Sans Flex', 'Segoe UI', Tahoma, Arial, sans-serif;
+}
+
+/* Hər yerdə Google Sans Flex (tema üzərində mütləq tətbiq) – ikon şriftlər (.fa, .fab və s.) istisna */
+footer,
+footer *:not([class*="fa"]):not(.fab):not(.fas):not(.far):not(.fal),
+.navbar,
+.navbar *:not([class*="fa"]):not(.fab):not(.fas):not(.far):not(.fal),
+h1, h2, h3, h4, h5, h6,
+p, a, span, li, label, input, textarea, .btn, .nav-link, .dropdown-item {
+  font-family: 'Google Sans Flex', 'Segoe UI', Tahoma, Arial, sans-serif !important;
+}
+
+/* Navbar mətnlərinin rəngi: göy (yalnız yazılar, ikonlar yox) */
+.navbar .nav-link,
+.navbar .navbar-brand,
+.navbar .dropdown-item {
+  color: #0ea5e9 !important;
+}
+.navbar .nav-link:hover,
+.navbar .navbar-brand:hover,
+.navbar .dropdown-item:hover {
+  color: #0284c7 !important;
+}
+/* İkonlu linklər (sosial və s.) – göy deyil, öz rəngi qalsın */
+.navbar .nav-link:has([class*="fa"]) {
+  color: #555555 !important;
+}
+.navbar .nav-link:has([class*="fa"]):hover {
+  color: #404040 !important;
+}
+
+/* Dropdown ikonu (açıq bucaq) – göy (tema border-right + border-bottom ilə çəkir) */
+.navbar .dropdown .dropdown-indicator::after {
+  border-right-color: #0ea5e9 !important;
+  border-bottom-color: #0ea5e9 !important;
+}
+.navbar .dropdown .dropdown-indicator:hover::after {
+  border-right-color: #0284c7 !important;
+  border-bottom-color: #0284c7 !important;
+}
+
+/* Navbar logosu: hündürlük olduğu kimi, uzunluq (en) bir qədər azaldılıb */
+.navbar-brand .freya-logo img {
+  max-height: 40px !important;
+  max-width: 110px;
+  width: auto;
+  display: inline-block;
+  object-fit: contain;
+}
+
+/* Hero başlığı: mobilde sətirə bölünər, böyük ekranda bir sətirdə */
+.hero-heading-one-line {
+  white-space: normal;
+}
+@media (min-width: 768px) {
+  .hero-heading-one-line {
+    white-space: nowrap;
+  }
+}
+
+/* Mətn sətir uzunluğu: hər text üçün məhdud (oxunaqlılıq) */
+.main p,
+.main h1, .main h2, .main h3, .main h4, .main h5, .main h6 {
+  max-width: 48ch;
+}
+
+/* Məhsul təfərrüatı: şəkil və təsvir konteyneri tam simmetrik, təsvir şəklin altında */
+.product-detail-image-wrap {
+  margin-bottom: 0;
+}
+.product-detail-description-wrap {
+  margin-top: 1rem;
+  text-align: center;
+}
+.product-detail-description-wrap .product-description {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Məhsul təfərrüatı: təsvir mətni alt-alta (sətir-sətir) */
+.product-description {
+  display: block;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 48ch;
+  line-height: 1.6;
 }
 
 .main {

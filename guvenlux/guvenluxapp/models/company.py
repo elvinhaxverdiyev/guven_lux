@@ -8,5 +8,5 @@ class Company(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Şirkət"
-        verbose_name_plural = "Şirkətlər"
+        verbose_name = "Tərəfdaş"
+        verbose_name_plural = "Tərəfdaşlar"

@@ -30,7 +30,7 @@
     <link href="{% static 'assets/css/user.min.css' %}" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&amp;family=Jost:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:ital,wght@0,100..900&amp;display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -52,17 +52,17 @@
           <div class="collapse navbar-collapse" id="primaryNavbarCollapse">
             <ul class="navbar-nav py-3 py-lg-0 mt-1 mb-2 my-lg-0 ms-lg-n1">
               <li class="nav-item dropdown">
-                <a class="nav-link" href="{% url 'index' %}" role="button" aria-expanded="false">Home</a>
+                <a class="nav-link" href="{% url 'index' %}" role="button" aria-expanded="false">Ana Səhifə</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'about-page' %}">Haqqimizda</a>
+                <a class="nav-link" href="{% url 'about-page' %}">Haqqımızda</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'contact-page' %}">Elaqe</a>
+                <a class="nav-link" href="{% url 'contact-page' %}">Əlaqə</a>
               </li>
               <!-- MENYUDA DUZƏLİŞ -->
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle dropdown-indicator" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kataloq</a>
+                <a class="nav-link dropdown-toggle dropdown-indicator" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Məhsullar</a>
                 <ul class="dropdown-menu">
                   {% for cat in main_categories %}
                   <li>
@@ -111,7 +111,7 @@
                     <p class="mb-1 text-uppercase ls" data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.1}'>{{ image.title|default:"Başlıq" }}</p>
                   </div>
                   <div class="overflow-hidden">
-                    <h2 class="text-white fw-normal mb-4 mb-lg-0" data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0}'>{{ image.description|default:"Alt başlıq" }}</h2>
+                    <h2 class="text-white fw-normal mb-4 mb-lg-0 hero-heading-one-line" data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0}'>{{ image.description|default:"Alt başlıq" }}</h2>
                   </div>
                 </div>
                 <div class="col text-lg-end">
@@ -136,10 +136,10 @@
         <h3 class="mb-4" style="
           font-weight: 500;
           font-size: 30px;
-          font-family: 'Jost', sans-serif;
+          font-family: 'Google Sans Flex', sans-serif;
           letter-spacing: 3px;
           color: #212529;">
-          Popular məhsullar
+          Populyar məhsullar
         </h3>
 
       </div>
