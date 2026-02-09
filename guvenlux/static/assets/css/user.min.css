@@ -85,7 +85,26 @@ p, a, span, li, label, input, textarea, .btn, .nav-link, .dropdown-item {
 /* Mətn sətir uzunluğu: hər text üçün məhdud (oxunaqlılıq) */
 .main p,
 .main h1, .main h2, .main h3, .main h4, .main h5, .main h6 {
-  max-width: 48ch;
+  max-width: 58ch;
+}
+
+/* Haqqımızda səhifəsi: mətn mərkəzdə, bir az uzununa */
+.about-page-title {
+  font-weight: 500;
+  font-size: 1.75rem;
+  letter-spacing: 0.02em;
+  color: #212529;
+  text-align: center;
+}
+.about-page-text {
+  line-height: 1.6;
+  text-align: center;
+  font-size: 1.35rem;
+}
+.about-page-text p {
+  max-width: 58ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Məhsul təfərrüatı: şəkil və təsvir konteyneri tam simmetrik, təsvir şəklin altında */
@@ -101,14 +120,15 @@ p, a, span, li, label, input, textarea, .btn, .nav-link, .dropdown-item {
   margin-right: auto;
 }
 
-/* Məhsul təfərrüatı: təsvir mətni alt-alta (sətir-sətir) */
+/* Məhsul təfərrüatı: təsvir mətni alt-alta, bir az uzununa, bir az böyük şrift */
 .product-description {
   display: block;
   white-space: normal;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  max-width: 48ch;
+  max-width: 58ch;
   line-height: 1.6;
+  font-size: 1.35rem;
 }
 
 .main {
