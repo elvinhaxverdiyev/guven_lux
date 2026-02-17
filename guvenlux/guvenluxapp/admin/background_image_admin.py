@@ -8,3 +8,6 @@ class BackgroundImageAdmin(admin.ModelAdmin):
     list_display = ('id', 'page', 'image', 'created_at')  # page əlavə edildi
     list_filter = ('page', 'created_at')  # page üzrə süzgəc əlavə edildi
     search_fields = ('id', 'title')  # title üzrə də axtarış əlavə etmək olar
+
+    class Media:
+        js = ('assets/js/admin_image_compress.js',)

@@ -7,15 +7,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Freya | Website, template crafting machine</title>
+  <title>Guvenlux</title>
 
   <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="{% static '/assets/img/favicons/apple-touch-icon.png' %}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{% static '/assets/img/favicons/favicon-32x32.png' %}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{% static '/assets/img/favicons/favicon-16x16.png' %}">
-  <link rel="shortcut icon" type="image/x-icon" href="{% static '/assets/img/favicons/favicon.ico' %}">
-  <link rel="manifest" href="https://prium.github.io/freya/v2.1.0/assets/img/favicons/manifest.json">
-  <meta name="msapplication-TileImage" content="{% static '/assets/img/favicons/mstile-150x150.png' %}">
+  <link rel="apple-touch-icon" sizes="180x180" href="/media/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/media/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/media/logo.png">
+  <link rel="shortcut icon" type="image/png" href="/media/logo.png">
+  <meta name="msapplication-TileImage" content="/media/logo.png">
   <meta name="theme-color" content="#ffffff">
 
   <!-- Stylesheets -->
@@ -26,7 +25,7 @@
   <link href="{% static '/assets/css/user.min.css' %}" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:ital,wght@0,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -35,9 +34,7 @@
       <nav class="navbar navbar-expand-lg navbar-freya navbar-light">
         <a class="navbar-brand" href="{% url 'index' %}">
           <div class="freya-logo" style="background: none;">
-            <span style="font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 200; letter-spacing: 0px; color: #1a1a1a; text-transform: uppercase; font-style: italic; padding-top: 8px; padding-bottom: 8px; display: inline-block;">
-              Guvenlux
-            </span>
+            <img src="/media/logo.png" alt="Guvenlux Logo" style="max-height: 50px; width: auto; display: inline-block;">
           </div>
         </a>
 
@@ -51,11 +48,11 @@
 
         <div class="collapse navbar-collapse" id="primaryNavbarCollapse">
           <ul class="navbar-nav py-3 py-lg-0 mt-1 mb-2 my-lg-0 ms-lg-n1">
-            <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Ana Səhifə</a></li>
             <li class="nav-item"><a class="nav-link" href="{% url 'about-page' %}">Haqqımızda</a></li>
             <li class="nav-item"><a class="nav-link" href="{% url 'contact-page' %}">Əlaqə</a></li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle dropdown-indicator" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kataloq</a>
+              <a class="nav-link dropdown-toggle dropdown-indicator" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Məhsullar</a>
               <ul class="dropdown-menu">
                 {% for cat in main_categories %}
                   <li>
@@ -99,16 +96,22 @@
           <div class="col-md-10">
             <h4 class="mb-4">{{ product.name }}</h4>
 
+
             {% if product.get_main_image_url %}
-              <div class="text-center">
-                <img class="img-fluid mb-3"
+              <div class="text-center product-detail-image-wrap">
+                <img class="img-fluid"
                      src="{{ product.get_main_image_url }}"
                      alt="{{ product.name }}"
                      style="max-height: 400px; width: auto; object-fit: cover; border-radius: 8px;" />
               </div>
+              <div class="product-detail-description-wrap">
+                <p class="product-description">{{ product.description }}</p>
+              </div>
+            {% else %}
+              <div class="product-detail-description-wrap">
+                <p class="product-description">{{ product.description }}</p>
+              </div>
             {% endif %}
-
-            <p class="mt-4">{{ product.description }}</p>
           </div>
         </div>
       </div>
@@ -136,7 +139,7 @@
 
         <div class="col-md-4 mb-4">
           <h5 class="text-uppercase mb-3">Əlaqə</h5>
-          <p class="mb-1 small">Freya Incorporated</p>
+          <p class="mb-1 small">Guvenlux</p>
           <p class="mb-1 small">019 Appellation Ave, New Jersey</p>
           <p class="mb-1 small">535-118-7056</p>
           <p class="mb-0 small">Template by <a class="text-white-75" href="https://themewagon.com" target="_blank">Themewagon</a></p>

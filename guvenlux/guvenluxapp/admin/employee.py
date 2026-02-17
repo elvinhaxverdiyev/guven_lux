@@ -9,6 +9,9 @@ class CompanyAdmin(admin.ModelAdmin):
     search_fields = ('name',)               # şirkət adına görə axtarış
     list_filter = ()                        # lazım olsa filtrlər əlavə edə bilərsən
 
+    class Media:
+        js = ('assets/js/admin_image_compress.js',)
+
     def logo_preview(self, obj):
         if obj.logo:
             return format_html(
