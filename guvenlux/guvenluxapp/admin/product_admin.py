@@ -16,7 +16,3 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ['name', 'main_category', 'sub_category', 'is_active', 'is_popular']
     list_filter = ['main_category', 'sub_category', 'is_active', 'is_popular']
     search_fields = ['name']
-    inlines = [ProductImageInline]
-
-    class Media:
-        js = ('assets/js/admin_image_compress.js',)
