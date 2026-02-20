@@ -22,7 +22,6 @@ class Product(models.Model):
     name = models.CharField(max_length=150, verbose_name='Ad')
     description = models.TextField(max_length=500, verbose_name='Haqqında')
     slug = models.SlugField(max_length=150, unique=True, blank=True, null=True)
-    price = models.FloatField(verbose_name='Qiymət')
     created_at = models.DateTimeField(auto_now_add=True)
     is_active = models.BooleanField(default=True, verbose_name='Məhsul aktivliyi')
     is_popular = models.BooleanField(default=False, verbose_name='Ana səhifədə olacaq seçili məhsul')
